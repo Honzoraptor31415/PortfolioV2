@@ -59,7 +59,7 @@ html {
   scroll-behavior: smooth;
   color: white;
   scroll-padding-top: 90px;
-  font-size: 16px;
+  font-size: 17px;
   overflow-x: hidden;
 }
 
@@ -1086,6 +1086,10 @@ body {
   * {
     cursor: default !important;
   }
+}
+
+.socel-wrp {
+  align-items: center;
 }
 
 p a {

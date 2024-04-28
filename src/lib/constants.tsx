@@ -107,21 +107,29 @@ export const contactInfo: contact[] = [
   {
     id: "gmail",
     name: "Email",
-    username: "honzoraptor@gmail.com"
+    username: "honzoraptor@gmail.com",
+    url: "mailto:honzoraptor@gmail.com",
+    elementClass: "radial-blue"
   },
   {
     id: "github",
     name: "GitHub",
-    username: "Honzoraptor31415"
+    username: "Honzoraptor31415",
+    url: "https://github.com/Honzoraptor31415",
+    elementClass: "radial-white"
   },
   {
     id: "instagram",
     name: "Instagram",
-    username: "honzoraptor"
+    username: "honzoraptor",
+    url: "https://www.instagram.com/honzoraptor/",
+    elementClass: "radial-pink"
   },
   {
     id: "itch",
     name: "Itch.io",
-    username: "honzoraptor.itch.io"
+    username: "honzoraptor.itch.io",
+    url: "https://honzoraptor.itch.io/",
+    elementClass: "radial-light-red"
   },
 ]

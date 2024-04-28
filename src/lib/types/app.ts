@@ -8,4 +8,6 @@ export type contact = {
   id: string
   name: string
   username: string
+  url: string
+  elementClass: string
 }
