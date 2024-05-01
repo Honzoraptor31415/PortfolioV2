@@ -26,13 +26,11 @@ function Home() {
       <header>
         <BlurryBackground />
         <div className="header-side header-left hidden">
-          <h1>What's up!</h1>
-          <p className="header-about">This is a small portfolio website made by <a href="https://github.com/Honzoraptor31415" target="_blank" className="colored-text">Honzoraptor</a>. Whenever I code something, you'll find it here.</p>
-          <div className="primary-btn-wrp">
-            <a href="/projects" className="primary-btn span-move-btn">
-              My projects <span>→</span>
-            </a>
-          </div>
+          <h1 className="gradient-text">What's up!</h1>
+          <p className="header-about">This is a small portfolio website made by <a href="https://github.com/Honzoraptor31415" target="_blank" className="gradient-text">Honzoraptor</a>. Whenever I code something, you'll find it here.</p>
+          <a href="/projects" className="primary-btn span-move-btn">
+            My projects <span>→</span>
+          </a>
         </div>
         <div className="header-side hidden">
           <div className="langs-tech">
@@ -51,7 +49,7 @@ function Home() {
         <section className="hidden">
           <h2 id="about">About me</h2>
           <p className="about-text">
-            I'm a random guy in the east of Czechia in Europe. I started learning to code in the beginning of the year 2023. I started with <span className="html">HTML</span> and <span className="css">CSS</span> and later learned other languages, frameworks and technologies. More on that later, <a className="colored-text" href="#langs-techs">keep scrolling</a>!
+            I'm a random guy in the east of Czechia in Europe. I started learning to code in the beginning of the year 2023. I started with <span className="html">HTML</span> and <span className="css">CSS</span> and later learned other languages, frameworks and technologies. More on that later, <a className="gradient-text" href="#langs-techs">keep scrolling</a>!
           </p>
         </section>
         <section>

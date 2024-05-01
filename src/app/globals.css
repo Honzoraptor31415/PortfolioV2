@@ -3,10 +3,11 @@
   --main-bg-num: 20, 20, 26;
   --main-bg: rgb(var(--main-bg-num));
   --accent: #807AD6;
-  --accent2: #5F9EC7;
+  --accent2: #5fabc7;
   --accent2-hover: #00FFFF;
   --accent-hover: #5C6AFF;
-  --accent2-alpha: rgba(60, 96, 120, 0.5);
+  --accent2-alpha: rgba(60, 96, 120, 0.4);
+  --accent-alpha: rgb(128, 122, 214, 0.4);
   --main-border-color: rgba(255, 255, 255, 0.14);
   --main-header-spacing: 20px;
   --section-spacing: 50px;
@@ -21,6 +22,7 @@
   --supabase-color: #249361;
   --appwrite-color: #FD366E;
   --next-color: #fff;
+  --nav-height: 75px;
 }
 
 * {
@@ -59,7 +61,7 @@ html {
   scroll-behavior: smooth;
   color: white;
   scroll-padding-top: 90px;
-  font-size: 17px;
+  font-size: 16px;
   overflow-x: hidden;
 }
 
@@ -282,7 +284,6 @@ body {
 
   .header-about {
     font-size: 1.1rem;
-    letter-spacing: 2px;
   }
 
   main {
@@ -490,7 +491,7 @@ body {
     color: white;
   }
 
-  a.colored-text:hover {
+  a.gradient-text:hover {
     filter: contrast(20);
   }
 
@@ -531,11 +532,6 @@ body {
     width: auto;
   }
 
-  .primary-btn-wrp:hover .primary-btn {
-    box-shadow: -6px 6px 7px var(--accent2-alpha);
-    transform: translate(1px, -1px);
-  }
-
   .no-projects p {
     max-width: 60%;
     margin: auto;
@@ -573,13 +569,13 @@ body {
 
   nav:not(.expanded) {
     width: 100%;
-    padding-block: 20px;
+    padding: 20px 23px;
     position: fixed;
     background: rgba(20, 20, 26, 0.534);
     backdrop-filter: blur(12px);
     border-bottom: 1px var(--main-border-color) solid;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     z-index: 999;
     max-width: 100%;
   }
@@ -952,7 +948,6 @@ body {
 
   .nav-side {
     display: grid;
-    flex-basis: 100%;
     justify-content: center;
     align-items: center;
   }
@@ -1032,7 +1027,7 @@ body {
     color: white;
   }
 
-  a.colored-text:active {
+  a.gradient-text:active {
     filter: contrast(20);
   }
 
@@ -1078,11 +1073,6 @@ body {
     width: auto;
   }
 
-  .primary-btn-wrp:hover .primary-btn {
-    box-shadow: 0 5px 7px var(--accent2-alpha);
-    transform: translateY(-1px);
-  }
-
   * {
     cursor: default !important;
   }
@@ -1099,7 +1089,7 @@ p a {
   transition: .3s;
 }
 
-.colored-text {
+.gradient-text {
   background-clip: text;
   background: -webkit-linear-gradient(40deg, var(--accent), var(--accent2));
   -webkit-background-clip: text;
@@ -1145,14 +1135,9 @@ p a {
   font-size: 1rem;
 }
 
-main.projects {
-  padding-top: 120px;
-  min-height: calc(100vh - 145px);
-}
-
 main.projects>h1 {
   text-align: center;
-  margin-bottom: 15px;
+  margin-block: 35px;
 }
 
 .projects-wrp {
@@ -1820,21 +1805,22 @@ section p {
   align-items: center;
 }
 
-.primary-btn-wrp {
-  display: flex;
-  max-width: fit-content;
-}
-
 .primary-btn {
   text-decoration: none;
   color: white;
   font-size: 1rem;
   padding: 10px 14px;
   border-radius: 14px;
-  background: linear-gradient(27deg, var(--accent), var(--accent2));
+  background: linear-gradient(90deg, var(--accent), var(--accent-hover));
+  background-size: 200%;
+  border: 2px var(--accent-hover) solid;
   max-width: fit-content;
-  transition: .2s;
+  transition: .35s;
   font-weight: 500;
+}
+
+.primary-btn:hover {
+  background-position-x: -100%;
 }
 
 .span-move-btn span {
@@ -1859,4 +1845,12 @@ div .span-move-btn:hover span {
 
 main:has(.no-projects-wrp) {
   padding-top: 0;
+}
+
+nav {
+  height: var(--nav-height);
+}
+
+.nav-space-top {
+  margin-top: var(--nav-height);
 }

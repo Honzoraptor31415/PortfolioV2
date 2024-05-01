@@ -1,6 +1,8 @@
 function Projects() {
   return (
-    <div>Projects</div>
+    <main className="nav-space-top projects">
+      <h1>My projects</h1>
+    </main>
   )
 }
 
