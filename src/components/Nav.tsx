@@ -3,10 +3,12 @@
 import { useState, useEffect } from "react"
 import { supabase } from "@/utils/supabase/client"
 import { redirect } from "next/navigation"
+import Link from "next/link"
 
 function Nav() {
   const [showNav, setShowNav] = useState<boolean>(false)
   const [user, setUser] = useState<any>()
+  const [fadeAnimation, setFadeAnimation] = useState<boolean>(false)
 
   async function getUser() {
     const { data: { user } } = await supabase.auth.getUser()
@@ -30,21 +32,21 @@ function Nav() {
     <>
       <nav id="desktop">
         <div className="nav-side">
-          <a href="/#" className="logo-text" data-title="Honzoraptor's">Honzoraptor's</a>
+          <Link href="/#" className="logo-text" data-title="Honzoraptor's">Honzoraptor's</Link>
         </div>
         <div className="nav-side desktop-menu">
           <div className="link-wrp">
-            <a href="/#about">About</a>
+            <Link href="/#about">About</Link>
           </div>
           <div className="link-wrp">
-            <a href="/#contact">Contact</a>
+            <Link href="/#contact">Contact</Link>
           </div>
           <div className="link-wrp">
-            <a href="/projects">Projects</a>
+            <Link href="/projects">Projects</Link>
           </div>
-          <a href="https://github.com/Honzoraptor31415">
+          <Link href="https://github.com/Honzoraptor31415">
             <img className="no-select" src="/github.svg" alt="Github icon" />
-          </a>
+          </Link>
           {user && <>
             <button className="outline-btn" onClick={signOut}>Sign out</button>
           </>}
@@ -52,30 +54,27 @@ function Nav() {
       </nav>
       <div id="mobile">
         <nav>
-          <a href="/#" className="logo-text" data-title="Honzoraptor's">Honzoraptor's</a>
+          <Link href="/#" className="logo-text" data-title="Honzoraptor's">Honzoraptor's</Link>
           <div className="grid-wrp nav-side">
-            <button className="nav-menu-button grid-wrp" onClick={() => { setShowNav(true) }}>
-              <img src="/menu.svg" />
+            <button className={`nav-menu-button nav-button grid-wrp ${fadeAnimation ? "nav-btn-fade-in" : ""}`} onClick={
+              () => {
+                setShowNav(!showNav)
+                setFadeAnimation(true)
+              }
+            }
+              onAnimationEnd={() => setFadeAnimation(false)}
+            >
+              <img src={showNav ? "/cross.svg" : "/menu.svg"} />
             </button>
           </div>
         </nav>
-        <nav style={{ right: (showNav ? "0px" : "-100%") }} className="expanded">
-          <div className="expanded-top">
-            {user && <>
-              <button className="signout-btn flex-center-verticall" onClick={signOut}>
-                <img src="signout.svg" className="no-select signout-icon" />
-              </button>
-            </>}
-            <button className="grid-wrp" onClick={() => { setShowNav(false) }}>
-              <img src="cross.svg" className="no-select" />
-            </button>
-          </div>
+        <div className={`expanded ${showNav ? "expanded-shown" : "expanded-hidden"}`}>
           <div className="menu">
-            <a onClick={() => { setShowNav(false) }} href="/#about">About</a>
-            <a onClick={() => { setShowNav(false) }} href="/#contact">Contact</a>
-            <a onClick={() => { setShowNav(false) }} href="/projects">Projects</a>
+            <Link onClick={() => { setShowNav(false) }} href="/#about">About</Link>
+            <Link onClick={() => { setShowNav(false) }} href="/#contact">Contact</Link>
+            <Link onClick={() => { setShowNav(false) }} href="/projects">Projects</Link>
           </div>
-        </nav>
+        </div>
       </div>
     </>
   )

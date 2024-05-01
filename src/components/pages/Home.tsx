@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect } from "react"
-import BlurryBackground from "@/lib/components/BlurryBackground"
+import BlurryBackground from "@/components/BlurryBackground"
 import { contactInfo, skills } from "@/lib/constants"
 import Link from "next/link"
 
@@ -27,10 +27,10 @@ function Home() {
         <BlurryBackground />
         <div className="header-side header-left hidden">
           <h1 className="gradient-text">What's up!</h1>
-          <p className="header-about">This is a small portfolio website made by <a href="https://github.com/Honzoraptor31415" target="_blank" className="gradient-text">Honzoraptor</a>. Whenever I code something, you'll find it here.</p>
-          <a href="/projects" className="primary-btn span-move-btn">
+          <p className="header-about">This is a small portfolio website made by <Link href="https://github.com/Honzoraptor31415" target="_blank" className="gradient-text">Honzoraptor</Link>. Whenever I code something, you'll find it here.</p>
+          <Link href="/projects" className="primary-btn span-move-btn">
             My projects <span>→</span>
-          </a>
+          </Link>
         </div>
         <div className="header-side hidden">
           <div className="langs-tech">
@@ -49,7 +49,7 @@ function Home() {
         <section className="hidden">
           <h2 id="about">About me</h2>
           <p className="about-text">
-            I'm a random guy in the east of Czechia in Europe. I started learning to code in the beginning of the year 2023. I started with <span className="html">HTML</span> and <span className="css">CSS</span> and later learned other languages, frameworks and technologies. More on that later, <a className="gradient-text" href="#langs-techs">keep scrolling</a>!
+            I'm a random guy in the east of Czechia in Europe. I started learning to code in the beginning of the year 2023. I started with <span className="html">HTML</span> and <span className="css">CSS</span> and later learned other languages, frameworks and technologies. More on that later, <Link className="gradient-text" href="#langs-techs">keep scrolling</Link>!
           </p>
         </section>
         <section>
@@ -76,7 +76,7 @@ function Home() {
           <div className="contact-socials-wrp">
             {contactInfo.map(({ name, url, username, id, elementClass }, index) => {
               return (
-                <a key={index} target="_blank" href={url} className={`socel-container hidden ${elementClass}`}>
+                <Link key={index} target="_blank" href={url} className={`socel-container hidden ${elementClass}`}>
                   <div className="socel-wrp">
                     <img className="no-select" src={`./${id}.svg`} alt="Itch icon" />
                     <div className="socials-element">
@@ -84,7 +84,7 @@ function Home() {
                       <p>{username}</p>
                     </div>
                   </div>
-                </a>
+                </Link>
               )
             })}
           </div>

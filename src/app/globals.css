@@ -399,10 +399,6 @@ body {
     flex-direction: row-reverse;
   }
 
-  .menu-line {
-    display: none;
-  }
-
   .login-form {
     max-width: 70%;
   }
@@ -580,48 +576,15 @@ body {
     max-width: 100%;
   }
 
-  .menu-line {
-    height: 8px;
-    width: 46px;
-    background: white;
-    border-radius: 2px;
-  }
-
-  .menu-line:nth-child(2) {
-    margin-block: 3px;
-  }
-
   .expanded {
-    height: 100vh;
+    height: calc(100vh - var(--nav-height));
     width: 100%;
     background: rgba(20, 20, 26, 0.534);
     backdrop-filter: blur(12px);
-    transition: .4s cubic-bezier(0, 0, 0, 0.76);
+    transition: .3s ease-in-out;
     z-index: 1000;
     position: fixed;
     display: flex;
-  }
-
-  .expanded-top {
-    width: 100%;
-    padding: 20px 30px;
-    display: flex;
-    justify-content: space-between;
-    position: absolute;
-    top: 0;
-  }
-
-  .expanded-top:not(.expanded-top:has(.signout-btn)) {
-    justify-content: right;
-  }
-
-  .expanded-top button {
-    transition: .3s;
-  }
-
-  nav button:active,
-  .expanded-top button:not(.signout-btn):active {
-    transform: scale(.8);
   }
 
   .menu {
@@ -663,7 +626,7 @@ body {
     transition: .3s;
   }
 
-  nav button {
+  .nav-button {
     background: transparent;
     transition: .3s;
     border: none;
@@ -1776,7 +1739,6 @@ section p {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.377);
 }
 
-.project-target,
 .project:target {
   background: var(--sec-bg);
   border-color: rgba(255, 255, 255, 0.856) !important;
@@ -1853,4 +1815,30 @@ nav {
 
 .nav-space-top {
   margin-top: var(--nav-height);
+}
+
+.nav-btn-fade-in {
+  animation: nav-btn-fade-in .15s forwards ease-in-out;
+}
+
+@keyframes nav-btn-fade-in {
+  0% {
+    opacity: .4;
+    transform: scale(.8);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.expanded-hidden {
+  bottom: -100%;
+  opacity: .6;
+}
+
+.expanded-shown {
+  bottom: 0;
+  opacity: 1;
 }
