@@ -4,7 +4,7 @@ function BlurryBackground() {
       <div className="background-element"></div>
       <div className="background-element"></div>
     </div>
-  )
+  );
 }
 
-export default BlurryBackground
+export default BlurryBackground;
