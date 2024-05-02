@@ -23,6 +23,8 @@
   --appwrite-color: #FD366E;
   --next-color: #fff;
   --nav-height: 75px;
+  --main-padding-block: 10px;
+  --main-padding-inline: 20px;
 }
 
 * {
@@ -135,7 +137,7 @@ body {
     border-radius: 14px;
     background: transparent;
     backdrop-filter: blur(20px);
-    padding: 10px 20px;
+    padding: var(--main-padding-block) var(--main-padding-inline);
     font-size: 1rem;
     outline: none;
     max-width: 90%;
@@ -491,10 +493,6 @@ body {
     filter: contrast(20);
   }
 
-  .project-links a:hover img {
-    filter: invert(0%);
-  }
-
   .error-wrp a:hover {
     color: white;
   }
@@ -531,6 +529,16 @@ body {
   .no-projects p {
     max-width: 60%;
     margin: auto;
+  }
+
+  .mobile {
+    display: none !important;
+  }
+
+  .project-button-links {
+    flex-wrap: wrap;
+    display: flex;
+    gap: 10px;
   }
 }
 
@@ -875,7 +883,7 @@ body {
     border-radius: 14px;
     background: transparent;
     backdrop-filter: blur(20px);
-    padding: 10px 20px;
+    padding: var(--main-padding-block) var(--main-padding-inline);
     font-size: 1rem;
     outline: none;
     max-width: 90%;
@@ -994,10 +1002,6 @@ body {
     filter: contrast(20);
   }
 
-  .project-links a:active img {
-    filter: invert(0%);
-  }
-
   .error-wrp a:active {
     color: white;
   }
@@ -1034,6 +1038,21 @@ body {
   .langs-section img {
     max-height: 30px;
     width: auto;
+  }
+
+  .project-link {
+    font-size: .9rem !important;
+    padding: 8px 18px !important;
+  }
+
+  .desktop {
+    display: none !important;
+  }
+
+  .project-button-links {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
   }
 
   * {
@@ -1113,26 +1132,22 @@ main.projects>h1 {
   border-radius: 18px;
 }
 
-.project-side:has(h3) {
+.project-side-content {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   gap: 20px;
 }
 
-.project-side:has(img) {
+.project-side-wimg {
   display: grid;
-  align-items: center;
+  align-items: flex-start;
+  flex-direction: column;
 }
 
 .project-side .tags {
   display: flex;
   flex-wrap: wrap;
-}
-
-.project-side a {
-  display: grid;
-  place-items: center;
 }
 
 .tag {
@@ -1143,6 +1158,10 @@ main.projects>h1 {
   font-style: italic;
   background: #242938;
   font-weight: 600;
+}
+
+.tag:first-child {
+  margin-left: 0;
 }
 
 .javascript-tag {
@@ -1204,19 +1223,7 @@ main.projects>h1 {
 .project-links {
   display: flex;
   gap: 20px;
-}
-
-.project-links a {
-  transition: .3s;
-  display: grid;
-  border-radius: 50%;
-  aspect-ratio: 1;
-}
-
-.project-links a img {
-  max-height: 30px;
-  width: auto;
-  filter: invert(10%);
+  width: 100%;
 }
 
 .show {
@@ -1425,7 +1432,7 @@ header.error {
   border-radius: 14px;
   background: transparent;
   backdrop-filter: blur(20px);
-  padding: 10px 20px;
+  padding: var(--main-padding-block) var(--main-padding-inline);
   outline: none;
   max-width: 90%;
 }
@@ -1448,7 +1455,7 @@ header.error {
 .login-form input[type=submit] {
   background: rgb(26, 26, 26);
   border-radius: inherit;
-  padding: 10px 20px;
+  padding: var(--main-padding-block) var(--main-padding-inline);
   margin: 2px;
   border: none;
   cursor: pointer;
@@ -1526,7 +1533,7 @@ main.admin {
   border: none;
   background: red;
   transition: .3s;
-  padding: 10px 20px;
+  padding: var(--main-padding-block) var(--main-padding-inline);
   border-radius: 9px;
   cursor: pointer;
   color: white;
@@ -1537,12 +1544,6 @@ main.admin {
   display: flex;
   justify-content: right;
   margin: 0 30px 30px 30px;
-}
-
-.project:not(.admin .project) {
-  margin-block: 30px;
-  border: 1px var(--main-border-color) solid;
-  border-radius: 18px;
 }
 
 .admin-post-wrp {
@@ -1575,12 +1576,6 @@ main.admin {
   font-size: 1rem;
   font-weight: 700;
   display: grid;
-}
-
-.project-bottom-wrp {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
 .three-dots-btn {
@@ -1696,7 +1691,7 @@ section p {
 .outline-btn {
   border-radius: 14px;
   background: transparent;
-  padding: 10px 20px;
+  padding: var(--main-padding-block) var(--main-padding-inline);
   max-width: 90%;
   border: 1px var(--main-border-color) solid;
   color: white;
@@ -1737,6 +1732,13 @@ section p {
 
 .project {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.377);
+  margin-bottom: 40px;
+  border: 1px var(--main-border-color) solid;
+  border-radius: 18px;
+}
+
+.project:last-child {
+  margin-bottom: 0;
 }
 
 .project:target {
@@ -1841,4 +1843,36 @@ nav {
 .expanded-shown {
   bottom: 0;
   opacity: 1;
+}
+
+.align-center {
+  display: flex;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+button,
+.primary-btn,
+.outline-btn {
+  text-decoration: none;
+}
+
+.image-height-20 {
+  max-height: 20px;
+  width: auto;
+}
+
+.btn-gap {
+  display: flex;
+  gap: 12px;
+}
+
+.project-text-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
