@@ -79,7 +79,7 @@ export const skills: skill[] = [
     name: "Python",
     description: (
       <>
-        I started to be more interested in programming at this point and wanted to try something new. I wrote my first lines of Python code in a web-based IDE on <Link href="https://www.w3schools.com/python/default.asp">W3Schools.com</Link>
+        I started to be more interested in programming at this point and wanted to try something new and python was a language that I've heared about in the past as of an easy language, so I learned it.
       </>
     )
   },
