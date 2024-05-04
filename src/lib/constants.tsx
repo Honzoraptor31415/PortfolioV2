@@ -1,5 +1,4 @@
 import type { skill, contact } from "@/lib/types/app"
-import Link from "next/link"
 
 export const skills: skill[] = [
   {

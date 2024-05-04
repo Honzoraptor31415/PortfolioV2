@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import HiddenMenu from "./HiddenMenu";
+import { MenuElement } from "@/lib/types/app";
 
 interface props {
   date: string;
@@ -33,30 +35,30 @@ function Project({
   title,
   index,
 }: props) {
-  const [data, setData] = useState<any[]>([]);
   const [copied, setCopied] = useState(false);
-  const [currentLocationHash, setCurrentLocationHash] = useState("");
 
-  useEffect(() => {
-    setCurrentLocationHash(location.hash);
-  }, []);
+  const projectOptions: MenuElement[] = [
+    {
+      text: "Copy link",
+      type: "button",
+      onClick: () => {
+        clipboardWrite(`https://honzoraptor.vercel.app/projects#${title.replaceAll(" ", "-")}`)
+      }
+    }
+  ]
 
   return (
     <div
-      className={`project ${
-        currentLocationHash.slice(1) === title.replaceAll(" ", "-")
-          ? "project-target"
-          : ""
-      }`}
+      className="project"
       id={title.replaceAll(" ", "-")}
     >
-      <div className="project-side btn-gap project-side-wimg">
+      <div className="project-side btn-gap project-side-wimg justify-center">
         <a
           target="_blank"
           href={githubUrl}
           className="project-img-link flex-center-all"
         >
-          <img src={imgUrl} className="rounded project-image" />
+          <img src={imgUrl} className="border-radius-18 project-image" />
         </a>
         <div className="tags-wrp desktop">
           <p>Tags:</p>
@@ -100,40 +102,7 @@ function Project({
                 })}
               </div>
             </div>
-            <div className="popover-wrp grid-wrp mobile">
-              <button
-                id={`btn-${index}`}
-                className="three-dots-btn popover-btn before-bg-anim"
-              >
-                <img
-                  className="three-dots-vertical"
-                  src="/three-dots-vertical.svg"
-                  alt=""
-                />
-                <div id={`popover-${index}`} className="popover">
-                  <a
-                    onClick={() => {
-                      setCopied(true);
-                      setTimeout(() => {
-                        setCopied(false);
-                        document.getElementById(`btn-${index}`)?.blur();
-                      }, 1000);
-                      clipboardWrite(
-                        `https://honzoraptor.vercel.app/projects#${title.replaceAll(
-                          " ",
-                          "-"
-                        )}`
-                      );
-                    }}
-                    className="popover-link"
-                  >
-                    <span className={copied ? "success-text" : ""}>
-                      {copied ? "Link copied!" : "Copy link"}
-                    </span>
-                  </a>
-                </div>
-              </button>
-            </div>
+            <HiddenMenu menuIconUrl="/three-dots-vertical.svg" iconClass="image-height-20" btnClass="project-menu rounded" wrpClass="mobile" options={projectOptions} />
           </div>
         </div>
         <div className="align-center">
@@ -155,40 +124,7 @@ function Project({
                 <img className="image-height-20" src="/github.svg" />
               </Link>
             </div>
-            <div className="popover-wrp grid-wrp desktop">
-              <button
-                id={`btn-${index}`}
-                className="three-dots-btn popover-btn before-bg-anim"
-              >
-                <img
-                  className="three-dots-vertical"
-                  src="/three-dots-vertical.svg"
-                  alt=""
-                />
-                <div id={`popover-${index}`} className="popover">
-                  <a
-                    onClick={() => {
-                      setCopied(true);
-                      setTimeout(() => {
-                        setCopied(false);
-                        document.getElementById(`btn-${index}`)?.blur();
-                      }, 1000);
-                      clipboardWrite(
-                        `https://honzoraptor.vercel.app/projects#${title.replaceAll(
-                          " ",
-                          "-"
-                        )}`
-                      );
-                    }}
-                    className="popover-link"
-                  >
-                    <span className={copied ? "success-text" : ""}>
-                      {copied ? "Link copied!" : "Copy link"}
-                    </span>
-                  </a>
-                </div>
-              </button>
-            </div>
+            <HiddenMenu menuIconUrl="/three-dots-vertical.svg" iconClass="image-height-20" btnClass="project-menu rounded" wrpClass="desktop" options={projectOptions} />
           </div>
         </div>
       </div>

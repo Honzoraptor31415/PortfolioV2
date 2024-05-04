@@ -25,11 +25,13 @@
   --nav-height: 75px;
   --main-padding-block: 10px;
   --main-padding-inline: 20px;
+  --main-border-radius: 18px;
 }
 
 * {
   margin: 0;
   box-sizing: border-box;
+  color: white;
   padding: 0;
 }
 
@@ -365,7 +367,7 @@ body {
   .langs-section {
     padding: 20px;
     margin: 1px;
-    border-radius: 18px;
+    border-radius: var(--main-border-radius);
     display: flex;
     flex-direction: column;
     gap: 13px;
@@ -777,7 +779,7 @@ body {
     width: 100%;
     padding: 20px;
     margin: 1px;
-    border-radius: 18px;
+    border-radius: var(--main-border-radius);
     background: var(--sec-bg);
     display: flex;
     align-items: center;
@@ -809,7 +811,7 @@ body {
 
   .project {
     width: 95%;
-    padding: 10px;
+    padding: 10px 10px 15px 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -1055,6 +1057,10 @@ body {
     justify-content: space-around;
   }
 
+  .project-side-content {
+    gap: 15px;
+  }
+
   * {
     cursor: default !important;
   }
@@ -1128,8 +1134,8 @@ main.projects>h1 {
   align-items: center;
 }
 
-.project-side .rounded {
-  border-radius: 18px;
+.project-side .border-radius-18 {
+  border-radius: var(--main-border-radius);
 }
 
 .project-side-content {
@@ -1252,7 +1258,7 @@ main.projects>h1 {
   margin-block: 20px;
   display: flex;
   justify-content: center;
-  border-radius: 18px;
+  border-radius: var(--main-border-radius);
   box-shadow: 0 7px 15px rgba(0, 0, 0, 0.599);
   align-items: center;
 }
@@ -1424,7 +1430,7 @@ header.error {
   justify-content: center;
   flex-direction: column;
   border: 1px var(--main-border-color) solid;
-  border-radius: 18px;
+  border-radius: var(--main-border-radius);
   gap: 30px;
 }
 
@@ -1548,7 +1554,7 @@ main.admin {
 
 .admin-post-wrp {
   border: 1px var(--main-border-color) solid;
-  border-radius: 18px;
+  border-radius: var(--main-border-radius);
 }
 
 .admin-text {
@@ -1611,7 +1617,7 @@ main.admin {
   backdrop-filter: blur(5px);
   border: 1px var(--main-border-color) solid;
   background: rgba(var(--main-bg-num), 0.8);
-  border-radius: 18px;
+  border-radius: var(--main-border-radius);
   cursor: default;
   overflow: hidden;
   animation: show-popup .15s forwards;
@@ -1734,7 +1740,7 @@ section p {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.377);
   margin-bottom: 40px;
   border: 1px var(--main-border-color) solid;
-  border-radius: 18px;
+  border-radius: var(--main-border-radius);
 }
 
 .project:last-child {
@@ -1874,5 +1880,98 @@ button,
 .project-text-info {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
+}
+
+.justify-center {
+  display: flex;
+  justify-content: center;
+}
+
+.no-style {
+  background: transparent;
+  border: none;
+}
+
+.hover-before {
+  position: relative;
+  cursor: pointer;
+  transition: .1s;
+}
+
+.hover-before:active {
+  opacity: .8;
+  transform: scale(.9);
+}
+
+.hover-before::before {
+  content: '';
+  position: absolute;
+  display: block;
+  inset: 0;
+  opacity: 0;
+  transform: scale(.5);
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: inherit;
+  transition: .15s;
+}
+
+.hover-before:hover::before {
+  transform: scale(1.2);
+  opacity: 1;
+}
+
+.project-menu {
+  width: 30px;
+  height: 30px;
+  padding: 4px;
+}
+
+.rounded {
+  border-radius: 50%;
+}
+
+.hidden-menu-wrp {
+  position: relative;
+}
+
+.hidden-menu-content {
+  position: absolute;
+  width: 175px;
+  border-radius: 13px;
+  border: 1px var(--main-border-color) solid;
+  overflow: hidden;
+  background: var(--main-bg);
+  right: 0;
+  animation: hm-fade-in .1s forwards;
+}
+
+@keyframes hm-fade-in {
+  from {
+    opacity: .7;
+    transform: scale(.6);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.menu-element {
+  border-bottom: 1px var(--main-border-color) solid;
+  width: 100%;
+  cursor: pointer;
+  transition: .2s;
+  padding: 15px 20px;
+  font-size: 1rem;
+  text-align: left;
+}
+
+.menu-element:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.menu-element:last-child {
+  border-bottom: none;
 }
