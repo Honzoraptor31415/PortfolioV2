@@ -26,6 +26,7 @@
   --main-padding-block: 10px;
   --main-padding-inline: 20px;
   --main-border-radius: 18px;
+  --discord-color: #5865f2;
 }
 
 * {
@@ -359,8 +360,6 @@ body {
   }
 
   .socel-wrp img {
-    max-height: 50px;
-    min-height: 50px;
     width: auto;
   }
 
@@ -768,8 +767,6 @@ body {
   }
 
   .socel-wrp img {
-    min-width: 45px;
-    max-width: 45px;
     margin-inline: 6px;
     height: auto;
     max-height: 45px;
@@ -1974,4 +1971,13 @@ button,
 
 .menu-element:last-child {
   border-bottom: none;
+}
+
+.radial-discord-blue {
+  background: radial-gradient(var(--discord-color), var(--main-bg));
+}
+
+.socel-wrp img {
+  max-width: 40px;
+  min-width: 40px;
 }

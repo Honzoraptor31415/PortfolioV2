@@ -125,6 +125,13 @@ export const contactInfo: contact[] = [
     elementClass: "radial-pink"
   },
   {
+    id: "discord",
+    name: "Discord",
+    username: "honzoraptor_3.1415926535",
+    url: "https://discord.com/users/1002852808221011998",
+    elementClass: "radial-discord-blue"
+  },
+  {
     id: "itch",
     name: "Itch.io",
     username: "honzoraptor.itch.io",
