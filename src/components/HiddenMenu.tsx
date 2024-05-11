@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import type { MenuElement } from "@/lib/types/app"
 
 interface props {
@@ -13,15 +13,27 @@ interface props {
 
 function HiddenMenu({ wrpClass, btnClass, menuIconUrl, iconClass, options }: props) {
   const [isMenuVisible, setIsMenuVisible] = useState<boolean>(false)
+  const menuBtn = useRef<any>(null)
 
+  useEffect(() => {
+    const handleClick = (e: any) => {
+      if (menuBtn.current && menuBtn.current.contains(e.target)) {
+        setIsMenuVisible(!isMenuVisible);
+      } else {
+        setIsMenuVisible(false);
+      }
+    };
 
-  function toggleMenuVisibility() {
-    setIsMenuVisible(!isMenuVisible)
-  }
+    document.addEventListener("click", handleClick);
+
+    return () => {
+      document.removeEventListener("click", handleClick);
+    };
+  }, [isMenuVisible])
 
   return (
     <div className={`hidden-menu-wrp ${wrpClass ?? ""}`}>
-      <button onClick={toggleMenuVisibility} className={`no-style hover-before flex-center-all ${btnClass ?? ""}`}>
+      <button ref={menuBtn} className={`no-style hover-before flex-center-all dots-menu-btn ${btnClass ?? ""}`}>
         <img src={menuIconUrl} alt="Menu icon" className={`hidden-menu-icon ${iconClass ?? ""}`} />
       </button>
       {isMenuVisible && (
@@ -29,7 +41,7 @@ function HiddenMenu({ wrpClass, btnClass, menuIconUrl, iconClass, options }: pro
           {options.map((element, index) => {
             return (
               element.type === "button" ? (
-                <button key={index} onClick={element.onClick} className={`no-style menu-element ${element.className}`}>{element.text}</button>
+                <button key={index} onClick={element.onClick} className={`no-style menu-element ${element.className ?? ""}`}>{element.text}</button>
               ) : (
                 <>
                   <a key={index} className={`no-style menu-element ${element.className}`} href={element.href}>{element.text}</a>

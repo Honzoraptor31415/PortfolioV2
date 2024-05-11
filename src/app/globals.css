@@ -25,8 +25,9 @@
   --nav-height: 75px;
   --main-padding-block: 10px;
   --main-padding-inline: 20px;
-  --main-border-radius: 18px;
+  --border-radius-big: 18px;
   --discord-color: #5865f2;
+  --main-border-radius: 14px;
 }
 
 * {
@@ -137,7 +138,7 @@ body {
   .post-form textarea,
   .post-form button,
   .post-form select {
-    border-radius: 14px;
+    border-radius: var(--main-border-radius);
     background: transparent;
     backdrop-filter: blur(20px);
     padding: var(--main-padding-block) var(--main-padding-inline);
@@ -366,7 +367,7 @@ body {
   .langs-section {
     padding: 20px;
     margin: 1px;
-    border-radius: var(--main-border-radius);
+    border-radius: var(--border-radius-big);
     display: flex;
     flex-direction: column;
     gap: 13px;
@@ -776,7 +777,7 @@ body {
     width: 100%;
     padding: 20px;
     margin: 1px;
-    border-radius: var(--main-border-radius);
+    border-radius: var(--border-radius-big);
     background: var(--sec-bg);
     display: flex;
     align-items: center;
@@ -879,7 +880,7 @@ body {
   .post-form textarea,
   .post-form button,
   .post-form select {
-    border-radius: 14px;
+    border-radius: var(--main-border-radius);
     background: transparent;
     backdrop-filter: blur(20px);
     padding: var(--main-padding-block) var(--main-padding-inline);
@@ -1132,7 +1133,7 @@ main.projects>h1 {
 }
 
 .project-side .border-radius-18 {
-  border-radius: var(--main-border-radius);
+  border-radius: var(--border-radius-big);
 }
 
 .project-side-content {
@@ -1255,7 +1256,7 @@ main.projects>h1 {
   margin-block: 20px;
   display: flex;
   justify-content: center;
-  border-radius: var(--main-border-radius);
+  border-radius: var(--border-radius-big);
   box-shadow: 0 7px 15px rgba(0, 0, 0, 0.599);
   align-items: center;
 }
@@ -1427,12 +1428,12 @@ header.error {
   justify-content: center;
   flex-direction: column;
   border: 1px var(--main-border-color) solid;
-  border-radius: var(--main-border-radius);
+  border-radius: var(--border-radius-big);
   gap: 30px;
 }
 
 .login-form input:not(input[type=submit]) {
-  border-radius: 14px;
+  border-radius: var(--main-border-radius);
   background: transparent;
   backdrop-filter: blur(20px);
   padding: var(--main-padding-block) var(--main-padding-inline);
@@ -1450,7 +1451,7 @@ header.error {
 
 .form-btn-border {
   background: linear-gradient(-270deg, rgb(60 60 60) 5%, rgb(20 20 20));
-  border-radius: 14px;
+  border-radius: var(--main-border-radius);
   max-width: fit-content;
   transition: .3s;
 }
@@ -1551,7 +1552,7 @@ main.admin {
 
 .admin-post-wrp {
   border: 1px var(--main-border-color) solid;
-  border-radius: var(--main-border-radius);
+  border-radius: var(--border-radius-big);
 }
 
 .admin-text {
@@ -1614,7 +1615,7 @@ main.admin {
   backdrop-filter: blur(5px);
   border: 1px var(--main-border-color) solid;
   background: rgba(var(--main-bg-num), 0.8);
-  border-radius: var(--main-border-radius);
+  border-radius: var(--border-radius-big);
   cursor: default;
   overflow: hidden;
   animation: show-popup .15s forwards;
@@ -1692,7 +1693,7 @@ section p {
 }
 
 .outline-btn {
-  border-radius: 14px;
+  border-radius: var(--main-border-radius);
   background: transparent;
   padding: var(--main-padding-block) var(--main-padding-inline);
   max-width: 90%;
@@ -1737,7 +1738,7 @@ section p {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.377);
   margin-bottom: 40px;
   border: 1px var(--main-border-color) solid;
-  border-radius: var(--main-border-radius);
+  border-radius: var(--border-radius-big);
 }
 
 .project:last-child {
@@ -1777,7 +1778,7 @@ section p {
   color: white;
   font-size: 1rem;
   padding: 10px 14px;
-  border-radius: 14px;
+  border-radius: var(--main-border-radius);
   background: linear-gradient(90deg, var(--accent), var(--accent-hover));
   background-size: 200%;
   border: 2px var(--accent-hover) solid;
@@ -1938,7 +1939,9 @@ button,
   border-radius: 13px;
   border: 1px var(--main-border-color) solid;
   overflow: hidden;
-  background: var(--main-bg);
+  background: rgba(var(--main-bg-num), .5);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   right: 0;
   animation: hm-fade-in .1s forwards;
 }
@@ -1960,7 +1963,7 @@ button,
   width: 100%;
   cursor: pointer;
   transition: .2s;
-  padding: 15px 20px;
+  padding: var(--main-padding-block) var(--main-padding-inline);
   font-size: 1rem;
   text-align: left;
 }
@@ -1980,4 +1983,10 @@ button,
 .socel-wrp img {
   max-width: 40px;
   min-width: 40px;
+}
+
+.dots-menu-btn *,
+a img,
+button img {
+  pointer-events: none;
 }

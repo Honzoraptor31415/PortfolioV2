@@ -29,13 +29,11 @@ async function getProjects() {
       try {
         return (
           new Date(
-            `${b.date.split(".")[0]} ${
-              months[b.date.split(".")[1] - 1]
+            `${b.date.split(".")[0]} ${months[b.date.split(".")[1] - 1]
             }, ${b.date.split(".")[2].slice(1)}`
           ).valueOf() -
           new Date(
-            `${a.date.split(".")[0]} ${
-              months[a.date.split(".")[1] - 1]
+            `${a.date.split(".")[0]} ${months[a.date.split(".")[1] - 1]
             }, ${a.date.split(".")[2].slice(1)}`
           ).valueOf()
         );
@@ -69,7 +67,7 @@ async function Projects() {
                   date={project.date}
                   tags={project.tags.split(" ")}
                   isWeb={project.web === "yes" ? true : false}
-                  index={index}
+                  id={project.id}
                 />
               );
             })}

@@ -14,7 +14,7 @@ interface props {
   isWeb: boolean;
   text: string;
   title: string;
-  index: number;
+  id: string;
 }
 
 async function clipboardWrite(url: string) {
@@ -33,7 +33,7 @@ function Project({
   isWeb,
   text,
   title,
-  index,
+  id
 }: props) {
   const [copied, setCopied] = useState(false);
 
