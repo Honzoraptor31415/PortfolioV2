@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { supabase } from "@/utils/supabase/server";
-import Project from "@/components/Project";
+import ProjectsPage from "@/components/pages/Projects";
 
 export const metadata: Metadata = {
   title: "Honzoraptor's projects",
@@ -23,7 +23,7 @@ const months = [
 ];
 
 async function getProjects() {
-  const { data } = await supabase.from("Projects").select();
+  const { data } = await supabase.from("projects").select();
   if (data) {
     data.sort((a: any, b: any) => {
       try {
@@ -50,36 +50,8 @@ async function getProjects() {
 async function Projects() {
   const projects = (await getProjects()) ?? [];
   return (
-    <main className="nav-space-top projects">
-      <h1>My projects</h1>
-      <div className="projects-wrp">
-        {projects?.length > 0 ? (
-          <>
-            {projects.map((project, index) => {
-              return (
-                <Project
-                  key={index}
-                  title={project.titleEn}
-                  text={project.textEn}
-                  imgUrl={project.img}
-                  githubUrl={project.github}
-                  link={project.link}
-                  date={project.date}
-                  tags={project.tags.split(" ")}
-                  isWeb={project.web === "yes" ? true : false}
-                  id={project.id}
-                />
-              );
-            })}
-          </>
-        ) : (
-          <>
-            <h1>No projects</h1>
-          </>
-        )}
-      </div>
-    </main>
-  );
+    <ProjectsPage projects={projects} />
+  )
 }
 
 export default Projects;

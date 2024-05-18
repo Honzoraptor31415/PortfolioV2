@@ -11,23 +11,24 @@
   --main-border-color: rgba(255, 255, 255, 0.14);
   --main-header-spacing: 20px;
   --section-spacing: 50px;
-  --html-color: #E14E1D;
-  --css-color: #0277BD;
-  --js-color: #F0DB4F;
-  --ts-color: #007ACC;
-  --react-color: #00D8FF;
-  --svelte-color: #FF3E00;
-  --git-color: #F03C2E;
-  --python-color: #346E9E;
-  --supabase-color: #249361;
-  --appwrite-color: #FD366E;
-  --next-color: #fff;
+  --html-color: 225, 78, 29;
+  --css-color: 2, 119, 189;
+  --js-color: 240, 219, 79;
+  --ts-color: 0, 122, 204;
+  --react-color: 0, 216, 255;
+  --svelte-color: 255, 62, 0;
+  --git-color: 240, 60, 46;
+  --python-color: 52, 110, 158;
+  --supabase-color: 36, 147, 97;
+  --appwrite-color: 253, 54, 110;
+  --next-color: 255, 255, 255;
   --nav-height: 75px;
   --main-padding-block: 10px;
   --main-padding-inline: 20px;
   --border-radius-big: 18px;
   --discord-color: #5865f2;
   --main-border-radius: 14px;
+  --skill-bg-alpha-value: .5;
 }
 
 * {
@@ -294,7 +295,6 @@ body {
 
   main {
     margin-bottom: var(--section-spacing);
-    overflow-x: hidden;
     min-height: 100vh;
   }
 
@@ -429,58 +429,58 @@ body {
   }
 
   .langs-tech a[href="#html"]:hover {
-    box-shadow: 0 6px 6px var(--html-color);
-    background: var(--html-color);
+    box-shadow: 0 6px 6px rgba(var(--html-color), var(--skill-bg-alpha-value));
+    background: rgba(var(--html-color), var(--skill-bg-alpha-value));
   }
 
   .langs-tech a[href="#css"]:nth-child(2):hover {
-    box-shadow: 0 6px 6px var(--css-color);
-    background: var(--css-color);
+    box-shadow: 0 6px 6px rgba(var(--css-color), var(--skill-bg-alpha-value));
+    background: rgba(var(--css-color), var(--skill-bg-alpha-value));
   }
 
   .langs-tech a[href="#js"]:hover {
-    box-shadow: 0 6px 6px var(--js-color);
-    background: var(--js-color);
+    box-shadow: 0 6px 6px rgba(var(--js-color), var(--skill-bg-alpha-value));
+    background: rgba(var(--js-color), var(--skill-bg-alpha-value));
   }
 
   .langs-tech a[href="#ts"]:hover {
-    box-shadow: 0 6px 6px var(--ts-color);
-    background: var(--ts-color);
+    box-shadow: 0 6px 6px rgba(var(--ts-color), var(--skill-bg-alpha-value));
+    background: rgba(var(--ts-color), var(--skill-bg-alpha-value));
   }
 
   .langs-tech a[href="#react"]:hover {
-    box-shadow: 0 6px 6px var(--react-color);
-    background: var(--react-color);
+    box-shadow: 0 6px 6px rgba(var(--react-color), var(--skill-bg-alpha-value));
+    background: rgba(var(--react-color), var(--skill-bg-alpha-value));
   }
 
   .langs-tech a[href="#svelte"]:hover {
-    box-shadow: 0 6px 6px var(--svelte-color);
-    background: var(--svelte-color);
+    box-shadow: 0 6px 6px rgba(var(--svelte-color), var(--skill-bg-alpha-value));
+    background: rgba(var(--svelte-color), var(--skill-bg-alpha-value));
   }
 
   .langs-tech a[href="#git"]:hover {
-    box-shadow: 0 6px 6px var(--git-color);
-    background: var(--git-color);
+    box-shadow: 0 6px 6px rgba(var(--git-color), var(--skill-bg-alpha-value));
+    background: rgba(var(--git-color), var(--skill-bg-alpha-value));
   }
 
   .langs-tech a[href="#py"]:hover {
-    box-shadow: 0 6px 6px var(--python-color);
-    background: var(--python-color);
+    box-shadow: 0 6px 6px rgba(var(--python-color), var(--skill-bg-alpha-value));
+    background: rgba(var(--python-color), var(--skill-bg-alpha-value));
   }
 
   .langs-tech a[href="#supabase"]:hover {
-    box-shadow: 0 6px 6px var(--supabase-color);
-    background: var(--supabase-color);
+    box-shadow: 0 6px 6px rgba(var(--supabase-color), var(--skill-bg-alpha-value));
+    background: rgba(var(--supabase-color), var(--skill-bg-alpha-value));
   }
 
   .langs-tech a[href="#appwrite"]:hover {
-    box-shadow: 0 6px 6px var(--appwrite-color);
-    background: var(--appwrite-color);
+    box-shadow: 0 6px 6px rgba(var(--appwrite-color), var(--skill-bg-alpha-value));
+    background: rgba(var(--appwrite-color), var(--skill-bg-alpha-value));
   }
 
   .langs-tech a[href="#next"]:hover {
-    box-shadow: 0 6px 6px var(--next-color);
-    background: var(--next-color);
+    box-shadow: 0 6px 6px rgba(var(--next-color), var(--skill-bg-alpha-value));
+    background: rgba(var(--next-color), var(--skill-bg-alpha-value));
   }
 
   p a:hover {
@@ -541,6 +541,7 @@ body {
     flex-wrap: wrap;
     display: flex;
     gap: 10px;
+    width: 100%;
   }
 }
 
@@ -689,7 +690,6 @@ body {
   main {
     min-height: 100vh;
     margin-bottom: var(--section-spacing);
-    overflow-x: hidden;
   }
 
   .header-side {
@@ -809,7 +809,7 @@ body {
 
   .project {
     width: 95%;
-    padding: 10px 10px 15px 10px;
+    padding: 10px 10px 23px 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -936,58 +936,58 @@ body {
   }
 
   .langs-tech a[href="#html-css"]:active {
-    box-shadow: 0 6px 6px var(--html-color);
-    background: var(--html-color);
+    box-shadow: 0 6px 6px rgba(var(--html-color), var(--skill-bg-alpha-value));
+    background: rgba(var(--html-color), var(--skill-bg-alpha-value));
   }
 
   .langs-tech a[href="#html-css"]:nth-child(2):active {
-    box-shadow: 0 6px 6px var(--css-color);
-    background: var(--css-color);
+    box-shadow: 0 6px 6px rgba(var(--css-color), var(--skill-bg-alpha-value));
+    background: rgba(var(--css-color), var(--skill-bg-alpha-value));
   }
 
   .langs-tech a[href="#js"]:active {
-    box-shadow: 0 6px 6px var(--js-color);
-    background: var(--js-color);
+    box-shadow: 0 6px 6px rgba(var(--js-color), var(--skill-bg-alpha-value));
+    background: rgba(var(--js-color), var(--skill-bg-alpha-value));
   }
 
   .langs-tech a[href="#ts"]:active {
-    box-shadow: 0 6px 6px var(--ts-color);
-    background: var(--ts-color);
+    box-shadow: 0 6px 6px rgba(var(--ts-color), var(--skill-bg-alpha-value));
+    background: rgba(var(--ts-color), var(--skill-bg-alpha-value));
   }
 
   .langs-tech a[href="#react"]:active {
-    box-shadow: 0 6px 6px var(--react-color);
-    background: var(--react-color);
+    box-shadow: 0 6px 6px rgba(var(--react-color), var(--skill-bg-alpha-value));
+    background: rgba(var(--react-color), var(--skill-bg-alpha-value));
   }
 
   .langs-tech a[href="#sveltekit"]:active {
-    box-shadow: 0 6px 6px var(--svelte-color);
-    background: var(--svelte-color);
+    box-shadow: 0 6px 6px rgba(var(--svelte-color), var(--skill-bg-alpha-value));
+    background: rgba(var(--svelte-color), var(--skill-bg-alpha-value));
   }
 
   .langs-tech a[href="#git"]:active {
-    box-shadow: 0 6px 6px var(--git-color);
-    background: var(--git-color);
+    box-shadow: 0 6px 6px rgba(var(--git-color), var(--skill-bg-alpha-value));
+    background: rgba(var(--git-color), var(--skill-bg-alpha-value));
   }
 
   .langs-tech a[href="#py"]:active {
-    box-shadow: 0 3px 3px var(--python-color), 0 6px 6px #FFD242;
-    background: var(--python-color);
+    box-shadow: 0 3px 3px rgba(var(--python-color)), 0 6px 6px #FFD242, var(--skill-bg-alpha-value);
+    background: rgba(var(--python-color), var(--skill-bg-alpha-value));
   }
 
   .langs-tech a[href="#supabase"]:active {
-    box-shadow: 0 6px 6px var(--supabase-color);
-    background: var(--supabase-color);
+    box-shadow: 0 6px 6px rgba(var(--supabase-color), var(--skill-bg-alpha-value));
+    background: rgba(var(--supabase-color), var(--skill-bg-alpha-value));
   }
 
   .langs-tech a[href="#appwrite"]:active {
-    box-shadow: 0 6px 6px var(--appwrite-color);
-    background: var(--appwrite-color);
+    box-shadow: 0 6px 6px rgba(var(--appwrite-color), var(--skill-bg-alpha-value));
+    background: rgba(var(--appwrite-color), var(--skill-bg-alpha-value));
   }
 
   .langs-tech a[href="#next"]:active {
-    box-shadow: 0 6px 6px var(--next-color);
-    background: var(--next-color);
+    box-shadow: 0 6px 6px rgba(var(--next-color), var(--skill-bg-alpha-value));
+    background: rgba(var(--next-color), var(--skill-bg-alpha-value));
   }
 
   p a:active {
@@ -1123,7 +1123,7 @@ p a {
 
 main.projects>h1 {
   text-align: center;
-  margin-block: 35px;
+  padding-block: 35px;
 }
 
 .projects-wrp {
@@ -1140,7 +1140,7 @@ main.projects>h1 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 20px;
+  gap: 23px;
 }
 
 .project-side-wimg {
@@ -1149,14 +1149,14 @@ main.projects>h1 {
   flex-direction: column;
 }
 
-.project-side .tags {
+.tags {
   display: flex;
   flex-wrap: wrap;
+  gap: 6px;
 }
 
 .tag {
   padding: 4px 12px;
-  margin: 6px;
   border-radius: 4px;
   font-size: 0.8rem;
   font-style: italic;
@@ -1169,19 +1169,19 @@ main.projects>h1 {
 }
 
 .javascript-tag {
-  color: var(--js-color);
+  color: rgb(var(--js-color));
 }
 
 .sveltekit-tag {
-  color: var(--svelte-color);
+  color: rgb(var(--svelte-color));
 }
 
 .html-tag {
-  color: var(--html-color);
+  color: rgb(var(--html-color));
 }
 
 .css-tag {
-  color: var(--css-color);
+  color: rgb(var(--css-color));
 }
 
 .sass-tag {
@@ -1189,7 +1189,7 @@ main.projects>h1 {
 }
 
 .typescript-tag {
-  color: var(--ts-color);
+  color: rgb(var(--ts-color));
 }
 
 .python-tag {
@@ -1197,7 +1197,7 @@ main.projects>h1 {
 }
 
 .react-tag {
-  color: var(--react-color);
+  color: rgb(var(--react-color));
 }
 
 .supabase-tag {
@@ -1205,11 +1205,11 @@ main.projects>h1 {
 }
 
 .appwrite-tag {
-  color: var(--appwrite-color);
+  color: rgb(var(--appwrite-color));
 }
 
 .nextjs-tag {
-  color: var(--next-color);
+  color: rgb(var(--next-color));
 }
 
 .tags-wrp>p {
@@ -1270,43 +1270,43 @@ main.projects>h1 {
 }
 
 .langs-sec-border#html-css {
-  background: radial-gradient(var(--html-color), var(--main-bg));
+  background: radial-gradient(rgb(var(--html-color)), var(--main-bg));
 }
 
 .langs-sec-border#js {
-  background: radial-gradient(var(--js-color), var(--main-bg));
+  background: radial-gradient(rgb(var(--js-color)), var(--main-bg));
 }
 
 .langs-sec-border#ts {
-  background: radial-gradient(var(--ts-color), var(--main-bg));
+  background: radial-gradient(rgb(var(--ts-color)), var(--main-bg));
 }
 
 .langs-sec-border#react {
-  background: radial-gradient(var(--react-color), var(--main-bg));
+  background: radial-gradient(rgb(var(--react-color)), var(--main-bg));
 }
 
 .langs-sec-border#svelte {
-  background: radial-gradient(var(--svelte-color), var(--main-bg));
+  background: radial-gradient(rgb(var(--svelte-color)), var(--main-bg));
 }
 
 .langs-sec-border#git {
-  background: radial-gradient(var(--git-color), var(--main-bg));
+  background: radial-gradient(rgb(var(--git-color)), var(--main-bg));
 }
 
 .langs-sec-border#py {
-  background: radial-gradient(var(--python-color), var(--main-bg));
+  background: radial-gradient(rgb(var(--python-color)), var(--main-bg));
 }
 
 .langs-sec-border#supabase {
-  background: radial-gradient(var(--supabase-color), var(--main-bg));
+  background: radial-gradient(rgb(var(--supabase-color)), var(--main-bg));
 }
 
 .langs-sec-border#appwrite {
-  background: radial-gradient(var(--appwrite-color), var(--main-bg));
+  background: radial-gradient(rgb(var(--appwrite-color)), var(--main-bg));
 }
 
 .langs-sec-border#next {
-  background: radial-gradient(var(--next-color), var(--main-bg));
+  background: radial-gradient(rgb(var(--next-color)), var(--main-bg));
 }
 
 main>* {
@@ -1969,7 +1969,7 @@ button,
 }
 
 .menu-element:hover {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .menu-element:last-child {

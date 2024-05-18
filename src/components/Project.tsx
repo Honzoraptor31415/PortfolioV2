@@ -108,14 +108,18 @@ function Project({
         <div className="align-center">
           <div className="project-links flex-between align-center">
             <div className="project-button-links">
-              <Link
-                target="_blank"
-                href={link}
-                className="primary-btn align-center btn-gap project-link"
-              >
-                View demo
-                <img src="/link-away.svg" className="image-height-20" />
-              </Link>
+              {link && (
+                <>
+                  <Link
+                    target="_blank"
+                    href={link}
+                    className="primary-btn align-center btn-gap project-link"
+                  >
+                    View demo
+                    <img src="/link-away.svg" className="image-height-20" />
+                  </Link>
+                </>
+              )}
               <Link
                 href={githubUrl}
                 className="outline-btn align-center btn-gap project-link"
