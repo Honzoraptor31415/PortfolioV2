@@ -1,5 +1,12 @@
-function Login() {
-  return <div>Login</div>;
+import LoginPage from "@/components/pages/Login"
+
+export const metadata = {
+  title: "Login",
+  description: "Admin login for Honzoraptor"
 }
 
-export default Login;
+function Login() {
+  return <LoginPage />
+}
+
+export default Login
