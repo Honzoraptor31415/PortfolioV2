@@ -1456,7 +1456,7 @@ header.error {
   transition: .3s;
 }
 
-.login-form input[type=submit] {
+.login-form .submit {
   background: rgb(26, 26, 26);
   border-radius: inherit;
   padding: var(--main-padding-block) var(--main-padding-inline);
@@ -1989,4 +1989,8 @@ button,
 a img,
 button img {
   pointer-events: none;
+}
+
+button {
+  font-size: 1rem;
 }
