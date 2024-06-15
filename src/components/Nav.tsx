@@ -18,12 +18,9 @@ function Nav() {
   }
 
   async function signOut() {
-    const { error } = await supabase.auth.signOut();
-    console.log(error);
+    await supabase.auth.signOut();
     setUser(null);
-    if (!error) {
-      redirect("/");
-    }
+    redirect("/");
   }
 
   useEffect(() => {
@@ -67,9 +64,8 @@ function Nav() {
           </Link>
           <div className="grid-wrp nav-side">
             <button
-              className={`nav-menu-button nav-button grid-wrp ${
-                fadeAnimation ? "nav-btn-fade-in" : ""
-              }`}
+              className={`nav-menu-button nav-button grid-wrp ${fadeAnimation ? "nav-btn-fade-in" : ""
+                }`}
               onClick={() => {
                 setShowNav(!showNav);
                 setFadeAnimation(true);
@@ -81,9 +77,8 @@ function Nav() {
           </div>
         </nav>
         <div
-          className={`expanded ${
-            showNav ? "expanded-shown" : "expanded-hidden"
-          }`}
+          className={`expanded ${showNav ? "expanded-shown" : "expanded-hidden"
+            }`}
         >
           <div className="menu">
             <Link

@@ -115,7 +115,7 @@ function Project({
                     href={link}
                     className="primary-btn align-center btn-gap project-link"
                   >
-                    View demo
+                    View website
                     <img src="/link-away.svg" className="image-height-20" />
                   </Link>
                 </>

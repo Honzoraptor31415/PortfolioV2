@@ -1,6 +1,10 @@
-function BlurryBackground() {
+interface props {
+  className?: string
+}
+
+function BlurryBackground({ className }: props) {
   return (
-    <div className="bg-wrp">
+    <div className={`bg-wrp ${className ?? ""}`}>
       <div className="background-element"></div>
       <div className="background-element"></div>
     </div>

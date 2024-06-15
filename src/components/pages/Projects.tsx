@@ -5,7 +5,7 @@ import { DBProject } from "@/lib/types/db";
 
 function Projects({ projects }: any) {
   return (
-    <main className="nav-space-top projects">
+    <main className="nav-space-top-m projects">
       <h1>My projects</h1>
       <div className="projects-wrp">
         {projects?.length > 0 ? (

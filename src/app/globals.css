@@ -29,6 +29,7 @@
   --discord-color: #5865f2;
   --main-border-radius: 14px;
   --skill-bg-alpha-value: .5;
+  --login-form-submit-width: 106px;
 }
 
 * {
@@ -1429,7 +1430,7 @@ header.error {
   flex-direction: column;
   border: 1px var(--main-border-color) solid;
   border-radius: var(--border-radius-big);
-  gap: 30px;
+  gap: 20px;
 }
 
 .login-form input:not(input[type=submit]) {
@@ -1438,7 +1439,6 @@ header.error {
   backdrop-filter: blur(20px);
   padding: var(--main-padding-block) var(--main-padding-inline);
   outline: none;
-  max-width: 90%;
 }
 
 .login-form input,
@@ -1454,19 +1454,30 @@ header.error {
   border-radius: var(--main-border-radius);
   max-width: fit-content;
   transition: .3s;
+  cursor: pointer;
 }
 
 .login-form .submit {
   background: rgb(26, 26, 26);
   border-radius: inherit;
   padding: var(--main-padding-block) var(--main-padding-inline);
-  margin: 2px;
+  margin: 1px;
   border: none;
   cursor: pointer;
+  width: var(--login-form-submit-width);
+}
+
+.login-form .submit:disabled {
+  opacity: .5;
+}
+
+.login-form .form-btn-border:has(.submit:disabled) {
+  pointer-events: none;
+  cursor: default;
 }
 
 .login-form .form-btn-border:hover {
-  background-position-x: 53px;
+  background-position-x: calc(var(--login-form-submit-width) + 2px);
 }
 
 textarea:hover,
@@ -1683,12 +1694,11 @@ section p {
   justify-content: center;
 }
 
-.login-error {
+.form-error {
   color: red;
-  font-style: italic;
-  border-radius: 9px;
+  border-radius: 5px;
   background: rgba(111, 0, 0, 0.39);
-  padding: 7px;
+  padding: 5px;
   width: 100%;
 }
 
@@ -1819,8 +1829,12 @@ nav {
   height: var(--nav-height);
 }
 
-.nav-space-top {
+.nav-space-top-m {
   margin-top: var(--nav-height);
+}
+
+.nav-space-top-p {
+  padding-top: var(--nav-height);
 }
 
 .nav-btn-fade-in {
@@ -1993,4 +2007,36 @@ button img {
 
 button {
   font-size: 1rem;
+}
+
+.loader-spinner {
+  width: var(--spinner-size);
+  height: var(--spinner-size);
+  border: var(--spinner-border-width) solid var(--spinner-color);
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: spinner-rotation 1s linear infinite;
+}
+
+@keyframes spinner-rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.form-element {
+  width: 100%;
+  display: flex;
+  gap: 7px;
+  flex-direction: column;
+}
+
+.opacity-half {
+  opacity: .5;
 }
