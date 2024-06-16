@@ -1,4 +1,6 @@
+import Footer from "@/components/ui/Footer";
 import "./globals.css";
+import Nav from "@/components/ui/Nav";
 
 export const metadata = {
   title: "Honzoraptor's portfolio",
@@ -12,7 +14,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Nav />
+        {children}
+        <Footer />
+      </body>
     </html>
   )
 }

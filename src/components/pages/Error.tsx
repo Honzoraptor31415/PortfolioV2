@@ -11,7 +11,7 @@ function Error({ code, message }: props) {
   return (
     <header className="flex-center-all min-h-screen">
       <div className="error-page-dialog text-center gap-10 flex-column">
-        <h2>Error {code}</h2>
+        <h1>Error {code}</h1>
         <p className="grey">{message}</p>
         {code === 404 && <Link href="/" className="text-link m-inline-auto">Go to the home page</Link>}
       </div>
