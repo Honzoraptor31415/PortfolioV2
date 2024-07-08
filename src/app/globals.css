@@ -291,3 +291,19 @@ body:has(nav) {
   -webkit-text-fill-color: transparent;
   font-weight: 900;
 }
+
+.nav-link::after {
+  display: block;
+  content: '';
+  left: 0;
+  position: absolute;
+  bottom: -2px;
+  transition: var(--main-transition);
+  height: 2px;
+  width: 0;
+}
+
+.nav-link:hover:after {
+  background: linear-gradient(45deg, var(--accent), var(--accent2));
+  width: 100%;
+}

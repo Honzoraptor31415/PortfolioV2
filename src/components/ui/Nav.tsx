@@ -6,6 +6,25 @@ import { useState } from "react"
 function Nav() {
   const [isMenuShown, setIsMenuShown] = useState(false)
 
+  const navLinks = [
+    {
+      text: "Home",
+      linkHref: "/#",
+    },
+    {
+      text: "About",
+      linkHref: "/#about"
+    },
+    {
+      text: "Contact",
+      linkHref: "/#contact"
+    },
+    {
+      text: "Projects",
+      linkHref: "/projects",
+    },
+  ]
+
   return (
     <>
       <nav className="desktop desktop-nav">
@@ -13,10 +32,11 @@ function Nav() {
           <Link href="/#" className="nav-logo">Honzoraptor's</Link>
         </div>
         <div className="gap-10 nav-links">
-          <Link href="/#" className="nav-link before-hover-height align-center">Home</Link>
-          <Link href="/#about" className="nav-link before-hover-height align-center">About</Link>
-          <Link href="/#contact" className="nav-link before-hover-height align-center">Contact</Link>
-          <Link href="/projects" className="nav-link before-hover-height align-center">Projects</Link>
+          {navLinks.map(({ text, linkHref }, i) => {
+            return (
+              <Link key={i} href={linkHref} className="relative nav-link align-center">{text}</Link>
+            )
+          })}
         </div>
       </nav>
       <nav className="mobile mobile-nav">
