@@ -22,6 +22,10 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 16.5px;
+}
+
 body {
   min-height: 100svh;
   color: white;
@@ -140,6 +144,11 @@ body {
 .gap-10 {
   display: flex;
   gap: 10px;
+}
+
+.gap-20 {
+  display: flex;
+  gap: 20px;
 }
 
 .flex-column {
@@ -278,10 +287,6 @@ body:has(nav) {
 
 .nav-logo,
 .gradient-text {
-  -webkit-user-select: none;
-  user-select: none;
-  cursor: pointer;
-  font-size: 1.4rem;
   background-clip: text;
   text-decoration: none;
   transition: var(--main-transition);
@@ -290,6 +295,12 @@ body:has(nav) {
   max-width: fit-content;
   -webkit-text-fill-color: transparent;
   font-weight: 900;
+}
+
+.nav-logo {
+  -webkit-user-select: none;
+  user-select: none;
+  font-size: 1.4rem;
 }
 
 .nav-link::after {
@@ -306,4 +317,81 @@ body:has(nav) {
 .nav-link:hover:after {
   background: linear-gradient(45deg, var(--accent), var(--accent2));
   width: 100%;
+  border-radius: 100vw;
+}
+
+.blurry-bg-wrp {
+  position: relative;
+  filter: blur(46px);
+  opacity: .7;
+}
+
+.blurry-bg-element:first-child {
+  width: 290px;
+  height: 130px;
+  border-radius: 20px 0 40px 0;
+  background: linear-gradient(26deg, var(--accent), transparent);
+  animation: first-blurry-bg-element 40s infinite linear;
+}
+
+.blurry-bg-element:last-child {
+  position: absolute;
+  width: 100px;
+  height: 90px;
+  border-radius: 30%;
+  background-color: var(--accent2);
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: last-blurry-bg-element 10s infinite linear;
+}
+
+@keyframes first-blurry-bg-element {
+  50% {
+    opacity: .5;
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes last-blurry-bg-element {
+  50% {
+    transform: scale(.6);
+  }
+}
+
+.absolute {
+  position: absolute;
+}
+
+.main-header {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  padding-inline: 60px;
+  min-height: calc(100svh - var(--nav-height));
+}
+
+.header-side:first-child p {
+  max-width: 80%;
+}
+
+.justify-center {
+  display: flex;
+  justify-content: center;
+}
+
+.flex-end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header-side {
+  max-width: fit-content;
+  margin-inline: auto;
+}
+
+.main-heading {
+  font-size: 2.4rem;
 }
