@@ -158,43 +158,23 @@ body {
 
 .text-link,
 p a {
-  position: relative;
   font-weight: 600;
-  text-decoration: none;
   transition: var(--short-transition);
   max-width: fit-content;
-}
 
-.text-link::before,
-p a::before {
-  display: block;
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  z-index: -1;
-  background: linear-gradient(45deg, var(--accent), var(--accent2));
-  transition: var(--short-transition);
-  opacity: .7;
-  border-radius: 100vw;
-}
-
-.text-link:hover::before,
-p a:hover::before {
-  height: 3px;
-  opacity: 1;
-}
-
-.text-link,
-p a {
+  display: inline;
+  text-decoration: none;
+  background-image: linear-gradient(transparent, transparent), linear-gradient(transparent, transparent), linear-gradient(to right, var(--accent), var(--accent2));
+  background-repeat: no-repeat;
+  background-position: 120%, 122%, 0 100%;
+  background-size: 100% 2px;
   color: rgba(255, 255, 255, 0.9);
 }
 
 .text-link:hover,
 p a:hover {
   color: white;
+  background-size: 100% 4px;
 }
 
 .m-inline-auto {
@@ -369,11 +349,11 @@ body:has(nav) {
 .main-header {
   display: grid;
   grid-template-columns: 50% 50%;
-  padding-inline: 60px;
+  padding-inline: 80px;
   min-height: calc(100svh - var(--nav-height));
 }
 
-.header-side:first-child p {
+.header-side:first-child>p {
   max-width: 80%;
 }
 
