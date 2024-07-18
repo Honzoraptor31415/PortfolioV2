@@ -14,6 +14,7 @@
   --border-radius: var(--border-radius-default);
   --main-border-color: rgba(255, 255, 255, 0.134);
   color-scheme: dark;
+  --background-blur: 46px;
 }
 
 * {
@@ -31,6 +32,7 @@ body {
   color: white;
   background: var(--main-bg);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  overflow-x: hidden;
 }
 
 .min-h-screen {
@@ -81,6 +83,17 @@ body {
   .nav-logo:hover {
     text-shadow: 0 -1px rgba(var(--accent2-num), .6);
   }
+
+  .blurry-mouse-follower {
+    filter: blur(var(--background-blur));
+    animation: blurry-mouse-follower 4s linear infinite;
+    opacity: .7;
+    width: var(--width);
+    aspect-ratio: 1;
+    z-index: -1;
+    background: var(--accent2);
+    border-radius: 50%;
+  }
 }
 
 /* Smaller desktop / tablet */
@@ -112,6 +125,17 @@ body {
 
   .nav-logo:hover {
     text-shadow: 0 -1px rgba(var(--accent2-num), .6);
+  }
+
+  .blurry-mouse-follower {
+    filter: blur(var(--background-blur));
+    animation: blurry-mouse-follower 4s linear infinite;
+    opacity: .7;
+    width: var(--width);
+    aspect-ratio: 1;
+    background: var(--accent);
+    border-radius: 50%;
+    z-index: -1;
   }
 }
 
@@ -199,6 +223,7 @@ p a:hover {
 
 .nav-link {
   color: white;
+  transition: var(--main-transition);
 }
 
 a {
@@ -290,23 +315,32 @@ body:has(nav) {
   position: absolute;
   bottom: -2px;
   transition: var(--main-transition);
-  height: 2px;
+  height: 3px;
   width: 0;
+  border-radius: 100vw;
+  background: linear-gradient(45deg, var(--accent), var(--accent2));
 }
 
 .nav-link:hover:after {
-  background: linear-gradient(45deg, var(--accent), var(--accent2));
   width: 100%;
-  border-radius: 100vw;
+}
+
+.nav-link:hover {
+  text-shadow: 0 0 7px white;
 }
 
 .blurry-bg-wrp {
   position: relative;
-  filter: blur(46px);
+  filter: blur(var(--background-blur));
   opacity: .7;
+  height: 100%;
 }
 
-.blurry-bg-element:first-child {
+.blurry-bg-element {
+  position: absolute;
+}
+
+.blurry-bg-element.first {
   width: 290px;
   height: 130px;
   border-radius: 20px 0 40px 0;
@@ -314,8 +348,7 @@ body:has(nav) {
   animation: first-blurry-bg-element 40s infinite linear;
 }
 
-.blurry-bg-element:last-child {
-  position: absolute;
+.blurry-bg-element.second {
   width: 100px;
   height: 90px;
   border-radius: 30%;
@@ -323,7 +356,7 @@ body:has(nav) {
   top: 80px;
   left: 50%;
   transform: translateX(-50%);
-  animation: last-blurry-bg-element 10s infinite linear;
+  animation: second-blurry-bg-element 10s infinite linear;
 }
 
 @keyframes first-blurry-bg-element {
@@ -336,7 +369,7 @@ body:has(nav) {
   }
 }
 
-@keyframes last-blurry-bg-element {
+@keyframes second-blurry-bg-element {
   50% {
     transform: scale(.6);
   }
@@ -374,4 +407,11 @@ body:has(nav) {
 
 .main-heading {
   font-size: 2.4rem;
+}
+
+@keyframes blurry-mouse-follower {
+  50% {
+    transform: scale(.7);
+    opacity: .5;
+  }
 }
