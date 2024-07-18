@@ -39,6 +39,11 @@ body {
   min-height: 100svh;
 }
 
+main.min-h-screen,
+header.min-h-screen {
+  min-height: calc(100svh - var(--nav-height));
+}
+
 .flex-center-all {
   display: flex;
   align-items: center;
@@ -318,11 +323,13 @@ body:has(nav) {
   height: 3px;
   width: 0;
   border-radius: 100vw;
+  opacity: 0;
   background: linear-gradient(45deg, var(--accent), var(--accent2));
 }
 
 .nav-link:hover:after {
   width: 100%;
+  opacity: 1;
 }
 
 .nav-link:hover {
