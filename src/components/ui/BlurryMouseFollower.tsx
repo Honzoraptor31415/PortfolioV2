@@ -15,7 +15,7 @@ function BlurryMouseFollower() {
   }, [])
 
   return (
-    <div className="blurry-bg-element blurry-mouse-follower" style={{ left: mousePos.x - (size / 2), top: mousePos.y - (size / 2), "--width": `${size}px` } as React.CSSProperties}></div>
+    <div className="blurry-bg-element blurry-mouse-follower desktop" style={{ left: mousePos.x - (size / 2), top: mousePos.y - (size / 2), "--width": `${size}px` } as React.CSSProperties}></div>
   )
 }
 
