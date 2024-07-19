@@ -15,6 +15,9 @@
   --main-border-color: rgba(255, 255, 255, 0.134);
   color-scheme: dark;
   --background-blur: 46px;
+  --home-main-gap: 20px;
+  --home-section-gap: 15px;
+  --line-x-height: 1px;
 }
 
 * {
@@ -25,6 +28,11 @@
 
 html {
   font-size: 16.5px;
+  scroll-behavior: smooth;
+}
+
+html:has(nav) {
+  scroll-padding-top: var(--nav-height);
 }
 
 body {
@@ -33,6 +41,10 @@ body {
   background: var(--main-bg);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   overflow-x: hidden;
+}
+
+p {
+  line-height: 1.4;
 }
 
 .min-h-screen {
@@ -99,6 +111,15 @@ header.min-h-screen {
     background: var(--accent2);
     border-radius: 50%;
   }
+
+  .home-main {
+    margin-inline: auto;
+    width: 700px;
+  }
+
+  .home-section-text {
+    margin-inline: var(--home-section-gap);
+  }
 }
 
 /* Smaller desktop / tablet */
@@ -141,6 +162,10 @@ header.min-h-screen {
     background: var(--accent);
     border-radius: 50%;
     z-index: -1;
+  }
+
+  .home-main {
+    margin-inline: 90px;
   }
 }
 
@@ -245,6 +270,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 999;
   border-bottom: 1px var(--main-border-color) solid;
 }
 
@@ -421,4 +447,44 @@ body:has(nav) {
     transform: scale(.7);
     opacity: .5;
   }
+}
+
+.home-main {
+  display: flex;
+  gap: var(--home-main-gap);
+  padding-top: calc(var(--home-main-gap) * 2);
+}
+
+.home-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--home-section-gap);
+}
+
+.home-main-wrp {
+  width: 100%;
+  border-top: 1px var(--main-border-color) solid;
+}
+
+.line-x {
+  height: var(--line-x-height);
+  width: 100%;
+  margin-block: auto;
+  background: var(--main-border-color);
+  border-radius: 100vw;
+}
+
+.section-link-self {
+  visibility: hidden;
+  font-size: 1.3rem;
+  color: inherit;
+  text-decoration: underline;
+}
+
+.section-heading:hover .section-link-self {
+  visibility: visible;
+}
+
+.max-width-fit {
+  max-width: fit-content;
 }

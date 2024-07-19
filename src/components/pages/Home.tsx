@@ -16,6 +16,14 @@ function HomePage() {
           <BlurryBackground />
         </div>
       </header>
+      <div className="home-main-wrp">
+        <main className="home-main">
+          <section className="home-section" id="about">
+            <h2 className="gap-10 section-heading max-width-fit">About <a href="#about" className="section-link-self align-center"><img src="/link.svg" className="max-height-20" /></a></h2>
+            <p className="home-section-text">As mentioned, I'm a programmer from the east of Czechia. I mainly focus on programming front-end of webapps using frameworks like SvelteKit or Next. My favorite framework as of now is SvelteKit, because it's got everything you need to build a fullstack webapp. But since I'm not good at building back-ends, I use BaaS's like Supabase to do the hard work for me.</p>
+          </section>
+        </main>
+      </div>
     </>
   )
 }
