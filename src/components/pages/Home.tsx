@@ -30,7 +30,7 @@ function HomePage() {
               </p>
             </section>
             <section className="home-section" id="skills">
-              <h2 className="gap-10 section-heading max-width-fit">Skills <a href="#skills" className="section-link-self align-center"><img src="/link.svg" className="max-height-25" /></a></h2>
+              <h2 className="gap-10 section-heading max-width-fit">Skills overview <a href="#skills" className="section-link-self align-center"><img src="/link.svg" className="max-height-25" /></a></h2>
               <p className="home-section-text">Web development:</p>
               <div className="gap-10 home-skill-icons">
                 {skills.map((skill, i) => {

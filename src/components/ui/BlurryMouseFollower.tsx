@@ -6,17 +6,23 @@ function BlurryMouseFollower() {
   const size = 125
 
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
+  const [isMouseHovering, setIsMouseHovering] = useState(false)
 
   useEffect(() => {
     setMousePos({ x: window.innerWidth / 2, y: window.innerHeight / 2 })
-    document.addEventListener("mousemove", (e) => {
+    document.addEventListener("mousemove", (e: any) => {
       setMousePos({ x: e.pageX, y: e.pageY })
+      if (getComputedStyle(e.target).cursor === "pointer") {
+        setIsMouseHovering(true)
+      } else {
+        setIsMouseHovering(false)
+      }
     })
   }, [])
 
   return (
-    <div className="blurry-mouse-follower-wrp" style={{ height: getComputedStyle(document.body).height }}>
-      <div className="blurry-bg-element blurry-mouse-follower desktop" style={{ left: mousePos.x - (size / 2), top: mousePos.y - (size / 2), "--width": `${size}px` } as React.CSSProperties}></div>
+    <div className="blurry-mouse-follower-wrp absolute desktop" style={{ height: getComputedStyle(document.body).height }}>
+      <div className={`blurry-bg-element blurry-mouse-follower ${isMouseHovering ? "blurry-mouse-follower-hovering" : ""}`} style={{ left: mousePos.x - (size / 2), top: mousePos.y - (size / 2), "--width": `${size}px` } as React.CSSProperties}></div>
     </div>
   )
 }
