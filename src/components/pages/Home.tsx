@@ -60,10 +60,12 @@ function HomePage() {
               <h2 className="gap-10 section-heading max-width-fit">Projetcs</h2>
               <p className="home-section-text">You can find all of my projects <a href="/projects">right here</a>.</p>
             </section>
-            <section className="home-section" id="contact">
+
+            {/* <section className="home-section" id="contact">
               <h2 className="gap-10 section-heading max-width-fit">Where you can find me <a href="#contact" className="section-link-self align-center"><img src="/link.svg" className="max-height-25" /></a></h2>
               <div className="home-space-inline contact-grid"></div>
-            </section>
+            </section> */}
+
           </main>
         </div>
       </div>

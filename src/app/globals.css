@@ -5,6 +5,8 @@
   --accent2: rgb(var(--accent2-num));
   --main-bg-num: 20, 20, 20;
   --main-bg: rgb(var(--main-bg-num));
+  --sec-bg-num: 35, 35, 35;
+  --sec-bg: rgb(var(--sec-bg-num));
   --main-transition: .3s;
   --short-transition: .15s;
   --nav-height: 73px;
@@ -67,7 +69,7 @@ header.min-h-screen {
 }
 
 .grey {
-  color: grey;
+  color: rgb(191, 191, 191);
 }
 
 /* Desktop */
@@ -138,6 +140,10 @@ header.min-h-screen {
   .header-side:first-child>p {
     max-width: 80%;
   }
+
+  .socials-link:hover img {
+    filter: none;
+  }
 }
 
 /* Smaller desktop / tablet */
@@ -183,10 +189,6 @@ header.min-h-screen {
     z-index: -1;
   }
 
-  .home-main {
-    margin-inline: 90px;
-  }
-
   .main-header {
     display: grid;
     grid-template-columns: 50% 50%;
@@ -202,12 +204,17 @@ header.min-h-screen {
   .home-main {
     margin-inline: auto;
     width: 700px;
+    margin-inline: 90px;
   }
 
   .blurry-mouse-follower-wrp {
     inset: 0;
     overflow: hidden;
     z-index: -1;
+  }
+
+  .socials-link:hover img {
+    filter: none;
   }
 }
 
@@ -272,6 +279,26 @@ header.min-h-screen {
 
   .header-side:first-child>p {
     max-width: 80%;
+  }
+
+  .footer-content {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: var(--home-main-gap);
+  }
+
+  .socials-link:active img {
+    filter: none;
+  }
+
+  .footer-text {
+    text-align: center;
+  }
+
+  .footer-top {
+    display: flex;
+    justify-content: center;
   }
 }
 
@@ -342,6 +369,7 @@ p a:hover {
 
 .no-style {
   background: transparent;
+  text-decoration: none;
   border: none;
   font-size: 1rem;
   color: inherit;
@@ -409,7 +437,8 @@ nav {
 }
 
 a:active,
-button:active {
+button:active,
+.active-opacity:active {
   opacity: .8;
 }
 
@@ -536,7 +565,7 @@ body:has(nav) {
 .home-main {
   display: flex;
   gap: var(--home-main-gap);
-  padding-top: calc(var(--home-main-gap) * 2);
+  padding-block: calc(var(--home-main-gap) * 2);
 }
 
 .home-section {
@@ -602,4 +631,37 @@ img.no-select {
 
 .blurry-mouse-follower-hovering {
   background-color: var(--accent);
+}
+
+footer {
+  background: rgba(var(--sec-bg-num), .5);
+  backdrop-filter: blur(10px);
+  border: 1px var(--main-border-color) solid;
+  gap: var(--home-main-gap);
+  padding: 30px 20px;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.justify-start {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.footer-content {
+  padding-inline: var(--home-main-gap);
+}
+
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.socials-link img {
+  max-height: 23px;
+  width: auto;
+  filter: grayscale(1);
+  transition: var(--main-transition) linear;
 }

@@ -16,10 +16,6 @@ function Nav() {
       linkHref: "/#about"
     },
     {
-      text: "Contact",
-      linkHref: "/#contact"
-    },
-    {
       text: "Projects",
       linkHref: "/projects",
     },
