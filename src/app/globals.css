@@ -22,6 +22,20 @@
   --home-section-gap: 15px;
   --line-x-height: 1px;
   --sec-bg-transparent: rgba(var(--sec-bg-num), .5);
+  --appwrite-color: #FD366E;
+  --css-color: #0277BD;
+  --git-color: #F03C2E;
+  --godot-color: #478CBF;
+  --html-color: #E14E1D;
+  --js-color: #F0DB4F;
+  --next-color: #fff;
+  --python-color: #366994;
+  --react-color: #00D8FF;
+  --supabase-color: #3ecf8e;
+  --svelte-color: #FF3E00;
+  --ts-color: #007ACC;
+  --tag-black: #242938;
+
 }
 
 * {
@@ -165,6 +179,24 @@ header.min-h-screen {
   .project-side:last-child {
     padding-left: calc(var(--project-gap) / 2);
   }
+
+  .primary-button:hover::before {
+    background-position-x: -100px;
+  }
+
+  .primary-button:hover {
+    border-color: var(--accent);
+  }
+
+  .secondary-button:hover {
+    border-color: white;
+    box-shadow: 0 0 5px white, inset 0 0 5px white;
+  }
+
+  .project-links {
+    display: flex;
+    gap: 10px;
+  }
 }
 
 /* Smaller desktop / tablet */
@@ -240,6 +272,39 @@ header.min-h-screen {
 
   .projects-wrp {
     width: 600px;
+  }
+
+  .project {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+    --project-gap: 20px;
+  }
+
+  .project-side:first-child {
+    padding-right: calc(var(--project-gap) / 2);
+  }
+
+  .project-side:last-child {
+    padding-left: calc(var(--project-gap) / 2);
+  }
+
+  .primary-button:hover::before {
+    background-position-x: -100px;
+  }
+
+  .primary-button:hover {
+    border-color: var(--accent);
+  }
+
+  .secondary-button:hover {
+    border-color: white;
+    box-shadow: 0 0 5px white, inset 0 0 5px white;
+  }
+
+  .project-links {
+    display: flex;
+    gap: 10px;
   }
 }
 
@@ -328,6 +393,39 @@ header.min-h-screen {
 
   .projects-wrp {
     width: calc(100% - 20px);
+  }
+
+  .project {
+    display: grid;
+    gap: 10px;
+  }
+
+  .primary-button:active::before {
+    background-position-x: -100px;
+  }
+
+  .primary-button:active {
+    border-color: var(--accent);
+  }
+
+  .secondary-button:active {
+    border-color: white;
+    box-shadow: 0 0 5px white, inset 0 0 5px white;
+  }
+
+  .project-links {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 100%;
+  }
+
+  .project-links a:first-child {
+    margin-right: 5px;
+  }
+
+  .project-links a:last-child,
+  .project-links p:last-child {
+    margin-left: 5px;
   }
 }
 
@@ -712,15 +810,76 @@ footer {
 .project-tag {
   border-radius: var(--border-radius-small);
   padding: 3px 5px;
-  font-style: italic;
   font-size: .9rem;
   background: var(--sec-bg);
   border: 1px rgba(255, 255, 255, 0.161) solid;
+  font-weight: 500;
+}
+
+.appwrite-tag {
+  background: var(--appwrite-color);
+  color: white;
+}
+
+.css-tag {
+  background: var(--css-color);
+  color: white;
+}
+
+.git-tag {
+  background: var(--git-color);
+  color: white;
+}
+
+.godot-tag {
+  background: var(--godot-color);
+  color: white;
+}
+
+.html-tag {
+  background: var(--html-color);
+  color: white;
+}
+
+.javascript-tag {
+  background: var(--js-color);
+  color: var(--sec-bg);
+}
+
+.nextjs-tag {
+  background: var(--tag-black);
+  color: var(--next-color);
+}
+
+.python-tag {
+  background: var(--python-color);
+  color: white;
+}
+
+.react-tag {
+  background: var(--tag-black);
+  color: var(--react-color);
+}
+
+.supabase-tag {
+  background: var(--tag-black);
+  color: var(--supabase-color);
+}
+
+.sveltekit-tag {
+  background: var(--svelte-color);
+  color: white;
+}
+
+.typescript-tag {
+  background: var(--ts-color);
+  color: white;
 }
 
 .project-img {
   max-width: 100%;
   height: auto;
+  border: 1px var(--main-border-color) solid;
   border-radius: var(--border-radius);
 }
 
@@ -736,4 +895,51 @@ footer {
 .gap-5 {
   display: flex;
   gap: 5px;
+}
+
+.button {
+  padding: 10px 14px;
+  border-radius: var(--border-radius);
+  transition: var(--main-transition) linear;
+  color: inherit;
+  font-weight: 600;
+  background: transparent;
+}
+
+.primary-button {
+  border: 2px var(--accent2) solid;
+  position: relative;
+  overflow: hidden;
+}
+
+.primary-button::before {
+  position: absolute;
+  content: '';
+  inset: 0;
+  width: calc(100% + 100px);
+  background: linear-gradient(90deg, rgba(var(--accent2-num), .8), rgba(var(--accent-num), .8));
+  transition: inherit;
+  z-index: -1;
+}
+
+.secondary-button {
+  background: transparent;
+  border: 2px rgba(255, 255, 255, 0.5) solid;
+}
+
+.red {
+  color: rgb(255, 37, 37);
+}
+
+.small {
+  font-size: .9rem;
+}
+
+.project-links {
+  align-items: center;
+}
+
+.gap-15 {
+  display: flex;
+  gap: 15px;
 }

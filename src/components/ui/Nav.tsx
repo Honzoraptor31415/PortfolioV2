@@ -16,6 +16,10 @@ function Nav() {
       linkHref: "/#about"
     },
     {
+      text: "Skills",
+      linkHref: "/#skills"
+    },
+    {
       text: "Projects",
       linkHref: "/projects",
     },
