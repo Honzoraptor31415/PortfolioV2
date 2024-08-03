@@ -7,7 +7,6 @@ import skills from "@/lib/constants/skills"
 function HomePage() {
   return (
     <>
-      <BlurryMouseFollower />
       <div>
         <header className="main-header">
           <div className="header-side flex-column gap-20 justify-center">

@@ -3,7 +3,7 @@ import Link from "next/link"
 
 function Footer() {
   return (
-    <footer className="flex-between flex-center-all flex-column">
+    <footer className="flex-between flex-center-all flex-column sec-bg-transparent">
       <div className="w-full footer-top">
         <Link href="/#" className="nav-logo">Honzoraptor</Link>
       </div>

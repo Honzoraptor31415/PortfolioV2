@@ -14,12 +14,14 @@
   --border-radius-small: 5px;
   --border-radius-default: 14px;
   --border-radius: var(--border-radius-default);
+  --border-radius-big: 25px;
   --main-border-color: rgba(255, 255, 255, 0.134);
   color-scheme: dark;
   --background-blur: 46px;
   --home-main-gap: 20px;
   --home-section-gap: 15px;
   --line-x-height: 1px;
+  --sec-bg-transparent: rgba(var(--sec-bg-num), .5);
 }
 
 * {
@@ -144,6 +146,25 @@ header.min-h-screen {
   .socials-link:hover img {
     filter: none;
   }
+
+  .projects-wrp {
+    width: 800px;
+  }
+
+  .project {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+    --project-gap: 20px;
+  }
+
+  .project-side:first-child {
+    padding-right: calc(var(--project-gap) / 2);
+  }
+
+  .project-side:last-child {
+    padding-left: calc(var(--project-gap) / 2);
+  }
 }
 
 /* Smaller desktop / tablet */
@@ -215,6 +236,10 @@ header.min-h-screen {
 
   .socials-link:hover img {
     filter: none;
+  }
+
+  .projects-wrp {
+    width: 600px;
   }
 }
 
@@ -299,6 +324,10 @@ header.min-h-screen {
   .footer-top {
     display: flex;
     justify-content: center;
+  }
+
+  .projects-wrp {
+    width: calc(100% - 20px);
   }
 }
 
@@ -634,8 +663,6 @@ img.no-select {
 }
 
 footer {
-  background: rgba(var(--sec-bg-num), .5);
-  backdrop-filter: blur(10px);
   border: 1px var(--main-border-color) solid;
   gap: var(--home-main-gap);
   padding: 30px 20px;
@@ -664,4 +691,49 @@ footer {
   width: auto;
   filter: grayscale(1);
   transition: var(--main-transition) linear;
+}
+
+.projects-top {
+  margin-block: var(--home-main-gap);
+}
+
+.sec-bg-card {
+  padding: 20px;
+  border: 1px var(--main-border-color) solid;
+  border-radius: var(--border-radius-big);
+}
+
+.sec-bg-card,
+.sec-bg-transparent {
+  background: var(--sec-bg-transparent);
+  backdrop-filter: blur(10px);
+}
+
+.project-tag {
+  border-radius: var(--border-radius-small);
+  padding: 3px 5px;
+  font-style: italic;
+  font-size: .9rem;
+  background: var(--sec-bg);
+  border: 1px rgba(255, 255, 255, 0.161) solid;
+}
+
+.project-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+}
+
+.projects-wrp {
+  margin: 0 auto 60px auto;
+}
+
+.gap-30 {
+  display: flex;
+  gap: 30px;
+}
+
+.gap-5 {
+  display: flex;
+  gap: 5px;
 }
