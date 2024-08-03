@@ -1,5 +1,6 @@
 "use client"
 
+import { socials } from "@/lib/constants/app"
 import Link from "next/link"
 import { useState } from "react"
 
@@ -41,10 +42,32 @@ function Nav() {
       </nav>
       <nav className="mobile mobile-nav">
         <Link href="/#" className="nav-logo">Honzoraptor's</Link>
-        <button className="grid no-style" onClick={() => setIsMenuShown(true)}>
-          <img src="/menu.svg" className="max-height-20" />
+        <button className="grid no-style" onClick={() => setIsMenuShown(!isMenuShown)}>
+          <img src={isMenuShown ? "/cross.svg" : "/menu.svg"} className="max-height-20" />
         </button>
       </nav>
+      <div className="mobile-nav-menu mobile main-bg-transparent" style={{ bottom: isMenuShown ? "0px" : "-100svh" }}>
+        <div className="max-h-fit flex-center-all">
+          <div className="flex-column gap-10 w-full">
+            {navLinks.map(({ text, linkHref }, i) => {
+              return (
+                <Link onClick={() => {
+                  setIsMenuShown(false)
+                }} key={i} href={linkHref} className="relative nav-link text-center">{text}</Link>
+              )
+            })}
+          </div>
+        </div>
+        <div className="flex-wrp gap-10 justify-center mobile-nav-socials">
+          {socials.map(({ linkUrl, iconUrl }, i) => {
+            return (
+              <Link key={i} href={linkUrl} target="_blank" className="no-style grid socials-link active-opacity">
+                <img src={iconUrl} className="no-select" />
+              </Link>
+            )
+          })}
+        </div>
+      </div>
     </>
   )
 }

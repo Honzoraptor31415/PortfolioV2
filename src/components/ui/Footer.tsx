@@ -1,4 +1,4 @@
-import { creationYear } from "@/lib/constants/app"
+import { creationYear, socials } from "@/lib/constants/app"
 import Link from "next/link"
 
 function Footer() {
@@ -12,21 +12,13 @@ function Footer() {
           <p className="footer-text grey">&copy; Honzoraptor {creationYear} - {new Date().getFullYear()} ✌️</p>
         </div>
         <div className="footer-side gap-20 flex-wrap">
-          <a href="https://github.com/Honzoraptor31415" target="_blank" className="no-style grid socials-link active-opacity">
-            <img src="socials/github.svg" className="no-select" />
-          </a>
-          <a href="mailto:honzoraptor@gmail.com" target="_blank" className="no-style grid socials-link active-opacity">
-            <img src="socials/gmail.svg" className="no-select" />
-          </a>
-          <a href="https://www.codewars.com/users/Honzoraptor3.1415926535" target="_blank" className="no-style grid socials-link active-opacity">
-            <img src="socials/codewars.svg" className="no-select" />
-          </a>
-          <a href="https://discord.com/users/1002852808221011998" target="_blank" className="no-style grid socials-link active-opacity">
-            <img src="socials/discord.svg" className="no-select" />
-          </a>
-          <a href="https://honzoraptor.itch.io" target="_blank" className="no-style grid socials-link active-opacity">
-            <img src="socials/itch.svg" className="no-select" />
-          </a>
+          {socials.map(({ linkUrl, iconUrl }, i) => {
+            return (
+              <Link key={i} href={linkUrl} target="_blank" className="no-style grid socials-link active-opacity">
+                <img src={iconUrl} className="no-select" />
+              </Link>
+            )
+          })}
         </div>
       </div>
     </footer>

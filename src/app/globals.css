@@ -325,6 +325,14 @@ header.min-h-screen {
   .nav-link {
     --border-radius: 10px;
     height: 100%;
+    border-bottom: 1px var(--main-border-color) solid;
+    padding-block: 7px;
+    width: calc(100% - 40px);
+    margin-inline: auto;
+  }
+
+  .nav-link:last-child {
+    border-bottom: none;
   }
 
   .header-side {
@@ -396,7 +404,7 @@ header.min-h-screen {
 
   .project {
     display: grid;
-    gap: 10px;
+    gap: 15px;
   }
 
   .primary-button:active::before {
@@ -425,6 +433,24 @@ header.min-h-screen {
   .project-links a:last-child,
   .project-links p:last-child {
     margin-left: 5px;
+  }
+
+  .mobile-nav-menu {
+    height: calc(100svh - var(--nav-height));
+    width: 100%;
+    position: fixed;
+    transition: var(--main-transition) ease-in-out;
+    z-index: 999;
+    display: grid;
+    grid-template-rows: auto 50px;
+  }
+
+  .mobile-nav-socials {
+    padding-block: 10px;
+  }
+
+  .max-h-fit {
+    max-height: fit-content;
   }
 }
 
@@ -513,8 +539,6 @@ a {
 nav {
   position: fixed;
   width: 100%;
-  background: rgba(var(--main-bg-num), .5);
-  backdrop-filter: blur(12px);
   height: var(--nav-height);
   top: 0;
   display: flex;
@@ -522,6 +546,12 @@ nav {
   align-items: center;
   z-index: 999;
   border-bottom: 1px var(--main-border-color) solid;
+}
+
+nav,
+.main-bg-transparent {
+  background: rgba(var(--main-bg-num), .5);
+  backdrop-filter: blur(12px);
 }
 
 .before-hover-height,
@@ -760,7 +790,7 @@ img.no-select {
 }
 
 footer {
-  border: 1px var(--main-border-color) solid;
+  border-top: 1px var(--main-border-color) solid;
   gap: var(--home-main-gap);
   padding: 30px 20px;
 }
