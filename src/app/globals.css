@@ -326,7 +326,7 @@ header.min-h-screen {
     --border-radius: 10px;
     height: 100%;
     border-bottom: 1px var(--main-border-color) solid;
-    padding-block: 7px;
+    padding-block: 14px;
     width: calc(100% - 40px);
     margin-inline: auto;
   }

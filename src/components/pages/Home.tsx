@@ -21,7 +21,7 @@ function HomePage() {
           <main className="home-main flex-column">
             <section className="home-section" id="about">
               <h2 className="gap-10 section-heading max-width-fit">About <a href="#about" className="section-link-self align-center">
-                <img src="/link.svg" className="max-height-25" />
+                <img src="/link.svg" className="max-height-25" alt="" />
               </a></h2>
               <p className="home-section-text">As mentioned, I'm a programmer from the east of Czechia. I mainly focus on programming front-end of webapps using frameworks like SvelteKit or Next. My favorite framework as of now is SvelteKit, because it's got everything you need to build a fullstack webapp. But since I'm not good at building back-ends, I use BaaS's like Supabase to do the hard work for me.</p>
               <p className="home-section-text">
@@ -29,7 +29,7 @@ function HomePage() {
               </p>
             </section>
             <section className="home-section" id="skills">
-              <h2 className="gap-10 section-heading max-width-fit">Skills overview <a href="#skills" className="section-link-self align-center"><img src="/link.svg" className="max-height-25" /></a></h2>
+              <h2 className="gap-10 section-heading max-width-fit">Skills overview <a href="#skills" className="section-link-self align-center"><img src="/link.svg" className="max-height-25" alt="" /></a></h2>
               <p className="home-section-text">Web development:</p>
               <div className="gap-10 home-skill-icons">
                 {skills.map((skill, i) => {

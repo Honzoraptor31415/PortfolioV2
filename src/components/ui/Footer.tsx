@@ -15,7 +15,7 @@ function Footer() {
           {socials.map(({ linkUrl, iconUrl }, i) => {
             return (
               <Link key={i} href={linkUrl} target="_blank" className="no-style grid socials-link active-opacity">
-                <img src={iconUrl} className="no-select" />
+                <img src={iconUrl} className="no-select" alt="" />
               </Link>
             )
           })}

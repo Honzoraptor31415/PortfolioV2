@@ -26,12 +26,12 @@ function Project({ id, date, imgUrl, githubUrl, linkUrl, tags, textCz, textEn, t
         <div className="project-links">
           <a href={githubUrl} target="_blank" className="button gap-10 secondary-button flex-center-all">
             GitHub
-            <img src="socials/github.svg" className="max-height-20 no-select" />
+            <img src="socials/github.svg" className="max-height-20 no-select" alt="" />
           </a>
 
           {isWeb && linkUrl ? <a href={linkUrl} target="_blank" className="button gap-10 primary-button flex-center-all">
             Website
-            <img src="link.svg" className="max-height-20 no-select" />
+            <img src="link.svg" className="max-height-20 no-select" alt="" />
           </a> : (
             isWeb && !linkUrl && <p className="red">Not deployed yet</p>
           )}
