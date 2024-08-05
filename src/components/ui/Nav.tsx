@@ -46,7 +46,7 @@ function Nav() {
           <img src={isMenuShown ? "/cross.svg" : "/menu.svg"} className="max-height-20" alt="" />
         </button>
       </nav>
-      <div className="mobile-nav-menu mobile main-bg-transparent" style={{ bottom: isMenuShown ? "0px" : "-100svh" }}>
+      <div className="mobile-nav-menu mobile main-bg-transparent" style={{ top: isMenuShown ? "var(--nav-height)" : "100vh" }}>
         <div className="max-h-fit flex-center-all">
           <div className="flex-column w-full">
             {navLinks.map(({ text, linkHref }, i) => {
