@@ -354,7 +354,7 @@ header.min-h-screen {
   }
 
   .mobile-nav-menu {
-    height: calc(100svh - var(--nav-height));
+    height: calc(100vh - var(--nav-height));
     width: 100%;
     position: fixed;
     transition: var(--main-transition) ease-in-out;
