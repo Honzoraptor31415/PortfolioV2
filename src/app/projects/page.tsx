@@ -1,9 +1,7 @@
 import Error from "@/components/pages/Error"
 import Project from "@/components/projects/Project"
 import { months } from "@/lib/constants/app"
-import { DbProject } from "@/lib/types/db"
 import { createClient } from "@/utils/supabase/server"
-import { useState } from "react"
 
 async function page() {
   const supabase = createClient()
@@ -23,11 +21,11 @@ async function page() {
 
   return (
     error ? <Error code={Number(error.code)} message={error.message} /> : (
-      <main className="min-h-screen">
+      <main className="min-h-[100svh]">
         <div className="justify-center projects-top">
-          <h1>Projects</h1>
+          <h1 className="text-center">Projects</h1>
         </div>
-        <div className="projects-wrp gap-30 flex-column">
+        <div className="projects-wrp gap-[30px] flex flex-col">
           {projects.length > 0 ? (
             <>
               {projects.map((project, i) => {
@@ -35,7 +33,7 @@ async function page() {
               })}
             </>
           ) :
-            <div className="flex-center-all">
+            <div className="flex items-center justify-center">
               <h2>No projects...</h2>
             </div>
           }

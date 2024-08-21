@@ -1,5 +1,6 @@
 import Footer from "@/components/ui/Footer";
 import "./globals.css";
+import "./tailwind.css"
 import Nav from "@/components/ui/Nav";
 import BlurryMouseFollower from "@/components/ui/BlurryMouseFollower";
 

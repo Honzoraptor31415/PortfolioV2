@@ -3,15 +3,15 @@ import Link from "next/link"
 
 function Footer() {
   return (
-    <footer className="flex-between flex-center-all flex-column sec-bg-transparent">
+    <footer className="flex justify-between items-center flex-col sec-bg-transparent">
       <div className="w-full footer-top">
         <Link href="/#" className="nav-logo">Honzoraptor</Link>
       </div>
-      <div className="flex-between w-full footer-content">
+      <div className="flex justify-between w-full footer-content">
         <div className="footer-side">
-          <p className="footer-text grey">&copy; Honzoraptor {creationYear} - {new Date().getFullYear()} ✌️</p>
+          <p className="footer-text text-gray-400">&copy; Honzoraptor {creationYear} - {new Date().getFullYear()} ✌️</p>
         </div>
-        <div className="footer-side gap-20 flex-wrap">
+        <div className="footer-side flex gap-2 flex-wrap">
           {socials.map(({ linkUrl, iconUrl }, i) => {
             return (
               <Link key={i} href={linkUrl} target="_blank" className="no-style grid socials-link active-opacity">

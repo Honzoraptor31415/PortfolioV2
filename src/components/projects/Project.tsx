@@ -6,34 +6,34 @@ function Project({ id, date, imgUrl, githubUrl, linkUrl, tags, textCz, textEn, t
   isWeb }: DbProject) {
   return (
     <div className="sec-bg-card project">
-      <div className="project-side gap-15 flex-column">
+      <div className="project-side gap-2.5 flex flex-col">
         <img src={imgUrl} alt={titleEn} className="project-img" />
-        <div className="flex-column gap-10">
-          <i className="grey small">Tags</i>
-          <div className="flex-wrp gap-5">
+        <div className="flex flex-col gap-2.5">
+          <i className="text-gray-400 text-sm">Tags</i>
+          <div className="flex gap-2 flex-wrap">
             {tags.split(" ").map((tagName, i) => {
               return <span key={i} className={`project-tag ${tagName}-tag`}>{tagName}</span>
             })}
           </div>
         </div>
       </div>
-      <div className="project-side gap-15 flex-column">
-        <div className="flex-between">
+      <div className="project-side gap-2.5 flex flex-col">
+        <div className="flex justify-between">
           <h3>{titleEn}</h3>
-          <div className="grey small">{date}</div>
+          <div className="text-gray-400 text-sm">{date}</div>
         </div>
         <p>{textEn}</p>
-        <div className="project-links">
-          <a href={githubUrl} target="_blank" className="button gap-10 secondary-button flex-center-all">
+        <div className="project-links items-center">
+          <a href={githubUrl} target="_blank" className="button gap-2.5 secondary-button flex items-center justify-center">
             GitHub
-            <img src="socials/github.svg" className="max-height-20 no-select" alt="" />
+            <img src="socials/github.svg" className="max-h-5 no-select" alt="" />
           </a>
 
-          {isWeb && linkUrl ? <a href={linkUrl} target="_blank" className="button gap-10 primary-button flex-center-all">
+          {isWeb && linkUrl ? <a href={linkUrl} target="_blank" className="button gap-2.5 primary-button flex items-center justify-center">
             Website
-            <img src="link.svg" className="max-height-20 no-select" alt="" />
+            <img src="link.svg" className="max-h-5 no-select" alt="" />
           </a> : (
-            isWeb && !linkUrl && <p className="red">Not deployed yet</p>
+            isWeb && !linkUrl && <p className="text-red-600">Not deployed yet</p>
           )}
         </div>
       </div>

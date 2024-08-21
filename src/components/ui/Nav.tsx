@@ -32,10 +32,10 @@ function Nav() {
         <div className="grid">
           <Link href="/#" className="nav-logo">Honzoraptor's</Link>
         </div>
-        <div className="gap-10 nav-links">
+        <div className="flex gap-2.5 nav-links">
           {navLinks.map(({ text, linkHref }, i) => {
             return (
-              <Link key={i} href={linkHref} className="relative nav-link align-center">{text}</Link>
+              <Link key={i} href={linkHref} className="relative nav-link flex items-center">{text}</Link>
             )
           })}
         </div>
@@ -43,12 +43,12 @@ function Nav() {
       <nav className="mobile mobile-nav">
         <Link href="/#" className="nav-logo">Honzoraptor's</Link>
         <button className="grid no-style" onClick={() => setIsMenuShown(!isMenuShown)}>
-          <img src={isMenuShown ? "/cross.svg" : "/menu.svg"} className="max-height-20" alt="" />
+          <img src={isMenuShown ? "/cross.svg" : "/menu.svg"} className="max-h-5" alt="" />
         </button>
       </nav>
       <div className="mobile-nav-menu mobile main-bg-transparent" style={{ top: isMenuShown ? "var(--nav-height)" : "100vh" }}>
-        <div className="max-h-fit flex-center-all">
-          <div className="flex-column w-full">
+        <div className="max-h-fit flex items-center justify-center">
+          <div className="flex flex-col w-full">
             {navLinks.map(({ text, linkHref }, i) => {
               return (
                 <Link onClick={() => {
@@ -58,7 +58,7 @@ function Nav() {
             })}
           </div>
         </div>
-        <div className="flex-wrp gap-10 justify-center mobile-nav-socials">
+        <div className="flex-wrap flex gap-2.5 justify-center mobile-nav-socials">
           {socials.map(({ linkUrl, iconUrl }, i) => {
             return (
               <Link key={i} href={linkUrl} target="_blank" className="no-style grid socials-link active-opacity">
