@@ -1,5 +1,5 @@
 export interface skill {
-  type: "web" | "game" | "other";
+  type: "frontend" | "backend" | "game" | "design" | "other";
   id: string;
 }
 

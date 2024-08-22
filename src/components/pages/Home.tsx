@@ -29,10 +29,26 @@ function HomePage() {
             </section>
             <section className="home-section" id="skills">
               <h2 className="flex gap-2.5 section-heading max-w-fit">Skills overview <a href="#skills" className="section-link-self flex items-center"><img src="/link.svg" className="max-h-6" alt="" /></a></h2>
-              <p className="home-section-text">Web development:</p>
+              <p className="home-section-text">Frontend:</p>
               <div className="flex gap-2.5 home-skill-icons">
                 {skills.map((skill, i) => {
-                  if (skill.type === "web") {
+                  if (skill.type === "frontend") {
+                    return <img key={i} src={`/skill-icons/${skill.id}.svg`} alt={skill.id} className="no-select" />
+                  }
+                })}
+              </div>
+              <p className="home-section-text">Backend / BaaS:</p>
+              <div className="flex gap-2.5 home-skill-icons">
+                {skills.map((skill, i) => {
+                  if (skill.type === "backend") {
+                    return <img key={i} src={`/skill-icons/${skill.id}.svg`} alt={skill.id} className="no-select" />
+                  }
+                })}
+              </div>
+              <p className="home-section-text">Design:</p>
+              <div className="flex gap-2.5 home-skill-icons">
+                {skills.map((skill, i) => {
+                  if (skill.type === "design") {
                     return <img key={i} src={`/skill-icons/${skill.id}.svg`} alt={skill.id} className="no-select" />
                   }
                 })}
