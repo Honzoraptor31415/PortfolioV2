@@ -4,4 +4,4 @@ My new portfolio that I made using NextJS. The previous one used just React, whi
 
 My new portfolio uses:
 
-[![Technologies used](https://skillicons.dev/icons?i=next,react,ts,supabase)](/)
+[![Technologies used](https://skillicons.dev/icons?i=next,react,ts,tailwind,supabase)](/)
