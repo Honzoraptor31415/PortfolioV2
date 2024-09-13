@@ -10,7 +10,8 @@ function HomePage() {
         <header className="main-header">
           <div className="header-side flex flex-col gap-2 justify-center">
             <h1 className="gradient-text text-[2.4rem]">Hey there!</h1>
-            <p>Welcome to my portfolio website! I'm a dude from Czechia who likes to code stuff, mainly with Javascript. Here you can find some of my cool projects, so if you're interested, definitely <a href="/projects">go check them out</a>.</p>
+            <p>Welcome to my portfolio website! I'm a dude from Czechia who likes to code stuff, mainly with JavaScript. Here you can find some of my cool projects that I've made so far.</p>
+            <a href="/projects" className="button primary-button max-w-fit mt-2">View projects</a>
           </div>
           <div className="header-side flex items-center">
             <BlurryBackground />
