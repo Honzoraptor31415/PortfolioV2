@@ -724,8 +724,10 @@ footer {
 
 .project-img {
   max-width: 100%;
+  min-height: 190px;
+  background-color: var(--main-border-color);
   height: auto;
-  border: 1px var(--main-border-color) solid;
+  border: 1px transparent solid;
   border-radius: var(--border-radius);
 }
 
