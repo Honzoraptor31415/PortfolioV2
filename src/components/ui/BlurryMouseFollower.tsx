@@ -9,7 +9,6 @@ function BlurryMouseFollower() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
   const [isMouseHovering, setIsMouseHovering] = useState(false)
   const [bodyHeight, setBodyHeight] = useState("0px")
-  const pathname = usePathname()
 
   useEffect(() => {
     setMousePos({ x: window.innerWidth / 2, y: window.innerHeight / 2 })
@@ -22,7 +21,7 @@ function BlurryMouseFollower() {
       }
     })
     setBodyHeight(getComputedStyle(document.body).height)
-  }, [pathname])
+  })
 
   return (
     <div className="blurry-mouse-follower-wrp absolute desktop" style={{ height: bodyHeight }}>

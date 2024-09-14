@@ -1,6 +1,7 @@
 "use client"
 
 import { DbProject } from "@/lib/types/db"
+import Link from "next/link"
 
 function Project({ id, date, imgUrl, githubUrl, linkUrl, tags, textCz, textEn, titleCz, titleEn,
   isWeb }: DbProject) {
@@ -24,15 +25,15 @@ function Project({ id, date, imgUrl, githubUrl, linkUrl, tags, textCz, textEn, t
         </div>
         <p>{textEn}</p>
         <div className="project-links items-center">
-          <a href={githubUrl} target="_blank" className="button gap-2.5 secondary-button flex items-center justify-center">
+          <Link href={githubUrl} target="_blank" className="button gap-2.5 secondary-button flex items-center justify-center">
             GitHub
             <img src="socials/github.svg" className="max-h-5 no-select" alt="" />
-          </a>
+          </Link>
 
-          {isWeb && linkUrl ? <a href={linkUrl} target="_blank" className="button gap-2.5 primary-button flex items-center justify-center">
+          {isWeb && linkUrl ? <Link href={linkUrl} target="_blank" className="button gap-2.5 primary-button flex items-center justify-center">
             Website
             <img src="link.svg" className="max-h-5 no-select" alt="" />
-          </a> : (
+          </Link> : (
             isWeb && !linkUrl && <p className="text-red-600">Not deployed yet</p>
           )}
         </div>
