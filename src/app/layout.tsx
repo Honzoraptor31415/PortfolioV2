@@ -8,7 +8,7 @@ export const metadata = {
   title: "Honzoraptor's portfolio",
   description: 'Here you can find all of my cool projects!',
   icons: {
-    icon: '/icon.svg',
+    icon: '/icon.png',
   },
 }
 
