@@ -47,7 +47,7 @@ function Nav() {
         </button>
       </nav>
       <div className="mobile-nav-menu mobile main-bg-transparent" style={{ top: isMenuShown ? "var(--nav-height)" : "100vh" }}>
-        <div className="max-h-fit flex items-center justify-center">
+        <div className="h-full flex items-center justify-center">
           <div className="flex flex-col w-full">
             {navLinks.map(({ text, linkHref }, i) => {
               return (
