@@ -55,6 +55,14 @@ function HomePage() {
                   }
                 })}
               </div>
+              <p className="home-section-text">Native development:</p>
+              <div className="flex gap-2.5 home-skill-icons">
+                {skills.map((skill, i) => {
+                  if (skill.type === "native") {
+                    return <img key={i} src={`/skill-icons/${skill.id}.svg`} alt={skill.id} className="no-select" />
+                  }
+                })}
+              </div>
               <p className="home-section-text">Game development:</p>
               <div className="flex gap-2.5 home-skill-icons">
                 {skills.map((skill, i) => {

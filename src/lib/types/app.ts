@@ -1,5 +1,5 @@
 export interface skill {
-  type: "frontend" | "backend" | "game" | "tool" | "language";
+  type: "frontend" | "backend" | "game" | "tool" | "language" | "native";
   id: string;
 }
 
